@@ -1,4 +1,3 @@
-import Btn from "../btn/btn";
 import styles from "./contact-form.module.scss";
 
 export default function ContactForm() {
