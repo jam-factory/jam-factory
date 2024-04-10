@@ -24,7 +24,6 @@
 }
 
 .container {
-  max-width: 100rem;
 }
 
 .intro {
@@ -35,10 +34,10 @@
 }
 
 .form {
-  padding: 6rem;
-  border-radius: 3rem;
+  padding: 8rem 6rem;
+  border-radius: 1.6rem;
   background-color: $c-white;
   box-shadow: 0 0.4rem 1rem 0.4rem rgba($c-main, 0.08);
   margin-top: 6.4rem;
-  height: 100rem;
+  border: 1px solid #e7eff3;
 }

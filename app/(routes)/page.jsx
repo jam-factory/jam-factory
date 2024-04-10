@@ -1,10 +1,9 @@
 import Image from "next/image";
-import svg from "/public/a.svg";
+import svg from "/public/mv-flat-illust.svg";
 import Link from "next/link";
 
 import styles from "./home-page.module.scss";
-// import Plan from "@/app/_pages/home/sections/plan/plan";
-import Plan from "../_pages/home/sections/plan-2/plan";
+import Plan from "../_pages/home/sections/plan/plan";
 import Faq from "@/app/_pages/home/sections/faq/faq";
 import Flow from "../_pages/home/sections/flow/flow";
 import Cta from "../_pages/home/sections/cta/cta";
