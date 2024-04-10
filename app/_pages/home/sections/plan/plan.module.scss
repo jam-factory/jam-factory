@@ -1,0 +1,328 @@
+@import "@sass-utils";
+
+.section {
+  padding: 10rem 0 14rem;
+  // background-image: linear-gradient(
+  //     0deg,
+  //     transparent calc(100% - 1px),
+  //     #f5f5f5 calc(100% - 1px)
+  //   ),
+  //   linear-gradient(
+  //     90deg,
+  //     transparent calc(100% - 1px),
+  //     #f5f5f5 calc(100% - 1px)
+  //   );
+  // background-size: 2.4rem 2.4rem;
+  // background-repeat: repeat;
+  // background-position: center center;
+  background-color: #f8f8f8;
+}
+
+.title {
+  text-align: center;
+  margin: 6rem auto 2.4rem;
+  font-size: 2.8rem;
+}
+
+.text {
+  text-align: center;
+  font-weight: 400;
+  margin: 0.8rem 0 4rem;
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.4rem;
+  margin-top: 2.4rem;
+}
+
+.plan {
+  border-radius: 1.6rem;
+  background-color: $c-white;
+  padding: 3rem 3rem;
+  box-shadow: 0 0.8rem 1.2rem 0.4rem rgba($c-black, 0.04);
+}
+
+.planTitle {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 900;
+  margin-top: 0.4rem;
+}
+
+.planIcon {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background-color: #eee;
+  margin: 1.6rem auto 0;
+}
+
+.planText {
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 1.6rem;
+  color: #6778a0;
+}
+
+.planPrice {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  min-height: 6rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+
+  &.custom {
+    align-items: center;
+  }
+
+  strong {
+    font-family: var(--font-fig);
+    font-weight: 900;
+    font-size: 4rem;
+    // margin-right: 0.4rem;
+    color: #ff9328;
+    color: $c-main;
+    margin: 0 0.4rem;
+
+    &.jp {
+      display: block;
+      font-family: var(--font-ja);
+      font-weight: 900;
+      // color: $c-text;
+    }
+  }
+
+  span {
+    font-size: 2rem;
+  }
+
+  small {
+    font-size: 1.4rem;
+    margin-left: 0.2rem;
+  }
+}
+
+.planDesc {
+  border-top: 0.1rem solid #eee;
+  margin-top: 1.6rem;
+  padding: 2rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.planDescItem {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 500;
+  --spacing: 0.06em;
+  padding-left: 1.5em;
+
+  p {
+    display: flex;
+    align-items: flex-start;
+
+    svg {
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      color: $c-main;
+      margin-right: 0.4rem;
+    }
+  }
+}
+
+.planPriceSub {
+  text-align: center;
+  font-weight: bold;
+}
+
+.table {
+  margin-top: 3.2rem;
+  width: 100%;
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+
+    tr {
+      border-top: 1px solid #eee;
+    }
+
+    th {
+      width: 40%;
+      padding: 2rem 1.6rem;
+    }
+
+    td {
+      padding: 2rem 1.6rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.plus {
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+  background-color: $c-main;
+  border-radius: 50%;
+  margin: 4rem auto;
+  // box-shadow: 0 0 1.2rem 0.4rem rgba($c-main, 0.5);
+
+  &::before,
+  &::after {
+    content: "";
+    width: 3.2rem;
+    height: 0.4rem;
+    border-radius: 1rem;
+    background-color: $c-white;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  &::after {
+    transform: rotate(90deg);
+  }
+}
+
+.maintenance {
+  .mainList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.4rem;
+    margin-top: 2.4rem;
+  }
+
+  .mainList > li {
+    border-radius: 1.6rem;
+    background-color: $c-white;
+    padding: 4rem 2rem;
+    box-shadow: 0 0.8rem 1.2rem 0.4rem rgba($c-black, 0.04);
+
+    h3 {
+      text-align: center;
+      font-size: 2.4rem;
+      font-weight: 900;
+      margin-top: 0.4rem;
+    }
+
+    .mText {
+      font-size: 1.3rem;
+      font-weight: 500;
+      text-align: center;
+      color: #6778a0;
+    }
+
+    .mPrice {
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+      min-height: 6rem;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      margin-top: 1rem;
+
+      &.custom {
+        align-items: center;
+      }
+
+      strong {
+        font-family: var(--font-fig);
+        font-weight: 900;
+        font-size: 4rem;
+        // margin-right: 0.4rem;
+        color: #ff9328;
+        color: $c-main;
+
+        &.jp {
+          display: block;
+          font-family: var(--font-ja);
+          font-weight: 900;
+          font-size: 3rem;
+          // color: $c-text;
+        }
+      }
+
+      span {
+        // font-size: 1.4rem;
+        font-size: 2.4rem;
+        font-weight: 900;
+      }
+
+      small {
+        font-size: 1.4rem;
+      }
+    }
+
+    .mList {
+      max-width: 40rem;
+      margin: 2rem auto 0;
+      display: grid;
+      gap: 1.6rem;
+
+      & > li {
+        width: 100%;
+        padding: 1.2rem 1.2rem;
+        font-weight: bold;
+        border: 0.1rem solid #eee;
+        box-shadow: none !important;
+        border-radius: 1rem;
+        text-align: center;
+
+        &.accent {
+          color: $c-main;
+          border-width: 0.2rem;
+          border-color: $c-main;
+        }
+
+        small {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
+
+.free {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  li {
+    background-color: $c-white;
+    border: 1px solid $c-main;
+    color: $c-white;
+    color: $c-main;
+    // font-family: var(--font-fig), var(--font-ja);
+    font-weight: bold;
+    font-size: 2rem;
+    height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 50%;
+    border-radius: 3rem;
+
+    span {
+      span {
+        font-size: 4rem;
+        font-weight: 900;
+      }
+    }
+  }
+}

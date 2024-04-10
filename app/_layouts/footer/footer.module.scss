@@ -1,0 +1,41 @@
+@import "@sass-utils";
+
+.footer {
+  background-color: $c-dark;
+  padding: 6.4rem 0 2.4rem;
+}
+
+.container {
+  // max-width: 132rem;
+}
+
+.logo {
+  color: $c-white;
+  display: flex;
+  flex-direction: column;
+
+  span {
+    &.en {
+      font-family: var(--font-fig);
+      font-weight: 900;
+      font-size: 4rem;
+    }
+
+    &.jp {
+      font-size: 1.2rem;
+      font-weight: bold;
+      letter-spacing: 0.2em;
+    }
+  }
+}
+
+.copy {
+  font-family: vaR(--font-fig);
+  text-align: center;
+  color: $c-white;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.4rem;
+  margin-top: 6.4rem;
+  letter-spacing: 0.1em;
+}

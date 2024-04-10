@@ -1,0 +1,25 @@
+@import "@sass-utils";
+
+.section {
+  background-color: $c-main;
+  // background-image: linear-gradient(to right top, #1454dd, #00c3ee);
+  padding: 16rem 0 14rem;
+}
+
+.title {
+  font-size: 4.8rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: $c-white;
+
+  &::before {
+    display: block;
+    content: attr(data-en);
+    text-transform: uppercase;
+    font-size: 3.2rem;
+    font-family: var(--font-fig);
+    letter-spacing: 0.2em;
+  }
+}

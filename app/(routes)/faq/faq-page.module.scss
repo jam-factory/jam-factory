@@ -1,0 +1,59 @@
+@import "@sass-utils";
+
+.body {
+  background-color: $c-white;
+  padding: 12rem 0;
+
+  h2 {
+    font-size: 3.2rem;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+  }
+}
+
+.bodyRow {
+  display: flex;
+  gap: 3rem;
+}
+
+.navCol {
+  width: 26rem;
+  flex-shrink: 0;
+
+  ul {
+    position: sticky;
+    top: 10rem;
+    left: 0;
+    display: grid;
+    gap: 1.6rem;
+
+    li {
+      a {
+        font-size: 1.8rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+
+        &::before {
+          content: "";
+          width: 2.4rem;
+          height: 1px;
+          background-color: $c-black;
+          margin-right: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+.blocks {
+  flex-grow: 1;
+  display: grid;
+  gap: 12rem;
+}
+
+.accordion {
+  margin-top: 3.2rem;
+}

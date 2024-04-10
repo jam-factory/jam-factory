@@ -1,0 +1,140 @@
+@import "@sass-utils";
+
+.btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  font-weight: bold;
+  border: 2px solid;
+  padding: 0.6rem 0.6rem 0.6rem 2.4rem;
+  border-radius: 10rem;
+  transition: all 0.3s;
+
+  @include hover {
+    &:hover {
+      .icon {
+        transform: scale(0.9);
+
+        svg.iconArrow {
+          &:first-child {
+            transform: translateX(5rem);
+          }
+
+          &:last-child {
+            transform: translateX(0);
+          }
+        }
+      }
+    }
+  }
+}
+
+.icon {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  margin-left: 3.2rem;
+  overflow: hidden;
+  transition: all 0.3s;
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transition: transform 0.3s;
+
+    &.iconArrow {
+      font-size: 2rem;
+
+      &:last-child {
+        transform: translateX(-5rem);
+      }
+    }
+
+    &.iconMail {
+      font-size: 2.1rem;
+    }
+  }
+}
+
+// themes
+
+.btn.themeMain {
+  border-color: $c-main;
+  color: $c-white;
+  background-color: $c-main;
+
+  .icon {
+    background-color: $c-white;
+    color: $c-main;
+  }
+
+  @include hover {
+    &:hover {
+      background-color: $c-white;
+      color: $c-main;
+
+      .icon {
+        background-color: $c-main;
+        color: $c-white;
+      }
+    }
+  }
+}
+
+.btn.themeMainReverse {
+  border-color: $c-white;
+  color: $c-main;
+  background-color: $c-white;
+
+  .icon {
+    background-color: $c-main;
+    color: $c-white;
+  }
+
+  @include hover {
+    &:hover {
+      background-color: $c-main;
+      color: $c-white;
+
+      .icon {
+        background-color: $c-white;
+        transform: scale(0.9);
+        color: $c-main;
+      }
+    }
+  }
+}
+
+.btn.themeLine {
+  border-color: $c-line;
+  color: $c-white;
+  background-color: $c-line;
+
+  .icon {
+    background-color: $c-white;
+    color: $c-line;
+
+    svg {
+    }
+  }
+
+  @include hover {
+    &:hover {
+      background-color: $c-white;
+      color: $c-line;
+
+      .icon {
+        background-color: $c-line;
+        transform: scale(0.9);
+        color: $c-white;
+      }
+    }
+  }
+}
