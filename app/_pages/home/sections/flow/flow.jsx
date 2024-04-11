@@ -28,8 +28,8 @@ export default function Flow() {
                       お問い合わせ
                     </Btn>
                   </div>
-                  <div className={styles.btn}>
-                    <Btn href="https://lin.ee/gHbKnti" theme="line" icon="arrow">
+                  <div className={styles.btn}>                    
+                    <Btn href="https://lin.ee/zl3F3r6" theme="line" icon="arrow">
                       相談する
                     </Btn>
                   </div>
