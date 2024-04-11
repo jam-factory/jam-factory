@@ -6,12 +6,15 @@
   left: 0;
   width: 100%;
   // background-color: rgba($c-white, 0.2);
-  backdrop-filter: blur(1rem);
+  // backdrop-filter: blur(1rem);
+  background-color: $c-white;
   z-index: 100;
   padding: 2rem 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 0.4rem 0.6rem 0.3rem rgba($c-dark, 0.02);
 }
 
 .logo {
