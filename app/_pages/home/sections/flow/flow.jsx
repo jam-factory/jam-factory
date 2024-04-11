@@ -29,8 +29,8 @@ export default function Flow() {
                     </Btn>
                   </div>
                   <div className={styles.btn}>
-                    <Btn href="/" theme="line" icon="arrow">
-                      LINEで相談する
+                    <Btn href="https://lin.ee/gHbKnti" theme="line" icon="arrow">
+                      相談する
                     </Btn>
                   </div>
                 </div>
