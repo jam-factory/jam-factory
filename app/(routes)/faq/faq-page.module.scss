@@ -1,5 +1,41 @@
 @import "@sass-utils";
 
+.mv {
+  padding: 16rem 0 2.4rem;
+  text-align: center;
+
+  .en {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: $c-main;
+  }
+
+  h1 {
+    font-size: 4.8rem;
+    font-weight: bold;
+    margin-top: 0.8rem;
+  }
+
+  .breadcrumb {
+    width: 100%;
+    margin-top: 8.8rem;
+    display: flex;
+
+    span {
+      font-weight: 500;
+    }
+
+    svg {
+      margin: 0 0.8rem;
+      height: 2.4rem;
+      display: flex;
+      align-items: center;
+      transform: translateY(-0.1rem);
+    }
+  }
+}
+
 .body {
   background-color: $c-white;
   padding: 12rem 0;

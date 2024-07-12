@@ -1,0 +1,96 @@
+@import "@sass-utils";
+
+.plan {
+  padding: 16rem 0 0;
+  background-color: #f5f5f7;
+
+  .en {
+    font-size: 1.6rem;
+    font-weight: 500;
+    width: 100%;
+    display: block;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: $c-main;
+  }
+
+  h2 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1.6rem;
+    text-align: center;
+  }
+
+  .overview {
+    text-align: center;
+    font-weight: 500;
+    line-height: 2;
+    margin-top: 2.4rem;
+  }
+}
+
+.bottom {
+}
+
+.plus {
+  position: relative;
+  display: block;
+  height: 3.2rem;
+  width: 3.2rem;
+  margin: 8rem auto 0;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 3.2rem;
+    height: 0.6rem;
+    background-color: $c-black;
+    display: block;
+  }
+
+  &::after {
+    transform: rotate(90deg);
+  }
+}
+
+.botText {
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 2;
+  margin-top: 3.2rem;
+}
+
+.linkWrap {
+  text-align: center;
+}
+
+.link {
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  margin: 4rem auto 0;
+  border-radius: 10rem;
+  padding: 1rem 2rem 1rem 3.2rem;
+  background-color: $c-main;
+  color: $c-white;
+
+  .icon {
+    width: 3.2rem;
+    height: 3.2rem;
+    // border: 0.2rem solid $c-black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.8rem;
+  }
+}

@@ -2,6 +2,8 @@ import SubMv from "@/app/_components/common/sub-mv/sub-mv";
 import styles from "./faq-page.module.scss";
 import Container from "@/app/_components/common/container/container";
 import AccordionList from "@/app/_components/common/accordion-list/accordion-list";
+import { FAQ_METADATA } from "@/app/_data/metadata";
+import { outputMetadata } from "@/app/_utils/outputMetadata";
 
 const data = [
   {
@@ -18,9 +20,7 @@ const data = [
     question: "自身でデザインの変更をしたいのですが、可能ですか？",
     answer: (
       <>
-        <p>
-          仕様上お客様が操作できるのは投稿の編集・更新のみですので、デザインを変更することはできません。
-        </p>
+        <p>仕様上お客様が操作できるのは投稿の編集・更新のみですので、デザインを変更することはできません。</p>
         <p>
           Webサイト公開後にデザインの修正をご希望の場合は、保守管理・運用のプランに入会いただくことを推奨しております。
         </p>
@@ -36,8 +36,7 @@ const data = [
     ),
   },
   {
-    question:
-      "保守管理・運用は必要ないので、Webサイトの制作のみをお願いできますか？",
+    question: "保守管理・運用は必要ないので、Webサイトの制作のみをお願いできますか？",
     answer: (
       <>
         <p>
@@ -50,20 +49,15 @@ const data = [
     question: "ランディングページの制作はしていただけますか？",
     answer: (
       <>
-        <p>
-          カスタムプランを選択いただいた場合は、オリジナルのデザインで制作いたします。
-        </p>
+        <p>カスタムプランを選択いただいた場合は、オリジナルのデザインで制作いたします。</p>
       </>
     ),
   },
   {
-    question:
-      "デザインはこちらで用意するので、サイトの実装のみを対応していただけますか？",
+    question: "デザインはこちらで用意するので、サイトの実装のみを対応していただけますか？",
     answer: (
       <>
-        <p>
-          はい、可能です。この場合はカスタムプランになりますので、費用の詳細はお問い合わせからご相談ください。
-        </p>
+        <p>はい、可能です。この場合はカスタムプランになりますので、費用の詳細はお問い合わせからご相談ください。</p>
       </>
     ),
   },
@@ -77,10 +71,12 @@ const data = [
   },
 ];
 
+export const metadata = outputMetadata(FAQ_METADATA.title, FAQ_METADATA.description, FAQ_METADATA.slug);
+
 export default function FaqPage() {
   return (
     <main className={styles.main}>
-      <SubMv jpTitle="よくある質問" enTitle="Q & A" />
+      <SubMv jpTitle="よくあるご質問" enTitle="Q&A" breadcrumbPaths={[{ name: "よくあるご質問" }]} />
 
       <div className={styles.body}>
         <Container>

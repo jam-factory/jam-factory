@@ -1,26 +1,36 @@
 import Link from "next/link";
 import styles from "./header.module.scss";
+import { LINE_URL_HEADER } from "@/app/_data/url";
 
 export default function Header() {
   return (
     <header className={styles.header}>
       <Link href="/" className={styles.logo}>
-        <span>Jam</span> Factory
+        <span>
+          <span>Jam</span> Factory
+        </span>
+        <span>ジャムファクトリー</span>
       </Link>
       <nav className={styles.nav}>
         <ul className={styles.list}>
           <li>
-            <Link href="/">サービス</Link>
+            <Link href="/#point">選ばれる理由</Link>
           </li>
           <li>
-            <Link href="/">私たちの強み</Link>
+            <Link href="/plan">料金プラン</Link>
           </li>
           <li>
-            <Link href="/">プラン</Link>
+            <Link href="/#flow">制作の流れ</Link>
+          </li>
+          <li>
+            <Link href="/faq">よくあるご質問</Link>
           </li>
         </ul>
         <Link href="/contact" className={styles.btn}>
           お問い合わせ
+        </Link>
+        <Link href={LINE_URL_HEADER} target="_blank" className={`${styles.btn} ${styles.isDarker}`}>
+          LINEで相談
         </Link>
       </nav>
     </header>

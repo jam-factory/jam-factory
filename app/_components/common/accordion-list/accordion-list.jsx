@@ -8,31 +8,12 @@ export default function AccordionList({ data, isFirstItemOpen }) {
       {data.map((item, i) => {
         if (isFirstItemOpen) {
           if (i === 0) {
-            return (
-              <AccordionItem
-                key={i}
-                answer={item.answer}
-                question={item.question}
-                isOpen={true}
-              />
-            );
+            return <AccordionItem key={i} answer={item.answer} question={item.question} isOpen={true} />;
           } else {
-            return (
-              <AccordionItem
-                key={i}
-                answer={item.answer}
-                question={item.question}
-              />
-            );
+            return <AccordionItem key={i} answer={item.answer} question={item.question} />;
           }
         } else {
-          return (
-            <AccordionItem
-              key={i}
-              answer={item.answer}
-              question={item.question}
-            />
-          );
+          return <AccordionItem key={i} answer={item.answer} question={item.question} />;
         }
       })}
     </dl>

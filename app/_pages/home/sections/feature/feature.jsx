@@ -69,9 +69,7 @@ export default function Feature() {
               保守運用サポート
             </h3>
             <div className={styles.cardText}>
-              <p>
-                ホームページは公開しただけでは効果を得られません。公開後の保守運用のサポートも手厚く行います。
-              </p>
+              <p>ホームページは公開しただけでは効果を得られません。公開後の保守運用のサポートも手厚く行います。</p>
             </div>
           </li>
           <li className={styles.card}>
