@@ -3,6 +3,7 @@ import styles from "./plan.module.scss";
 import Link from "next/link";
 import { IoArrowForward } from "react-icons/io5";
 import PlanOverview from "@/app/_components/plan/plan-overview/plan-overview";
+import Btn from "@/app/_components/common/btn/btn";
 
 export default function Plan() {
   return (
@@ -25,16 +26,13 @@ export default function Plan() {
           <p className={styles.botText}>
             無料・有料含め多くの追加オプションを用意しております！
             <br />
-            詳しくは料金ページからご確認ください。
+            詳しくは料金プランページからご確認ください。
           </p>
 
           <div className={styles.linkWrap}>
-            <Link href="/" className={styles.link}>
-              <span>料金ページを見る</span>
-              <div className={styles.icon}>
-                <IoArrowForward />
-              </div>
-            </Link>
+            <Btn href="/plan" theme="main" icon="arrow">
+              料金プランを見る
+            </Btn>
           </div>
         </div>
       </Container>

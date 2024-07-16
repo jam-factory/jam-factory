@@ -22,69 +22,13 @@ import lineIcon2 from "/public/icons8-line.svg";
 import { LINE_URL_TOP_CONTACT } from "@/app/_data/url";
 import { TOP_METADATA } from "../_data/metadata";
 import { outputMetadata } from "../_utils/outputMetadata";
+import Btn from "../_components/common/btn/btn";
 
 export const metadata = outputMetadata(TOP_METADATA.title, TOP_METADATA.description, TOP_METADATA.slug);
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      {/* <div className={styles.mv}>
-        <div className={styles.head}>
-          <h1>
-            <span>Jam</span> Factory
-          </h1>
-          <p>ジャムファクトリー</p>
-        </div>
-        <ul className={styles.labels}>
-          <li>
-            <span>
-              <span>高</span>セキュリティ
-            </span>
-          </li>
-          <li>
-            <span>
-              <span>高</span>速表示
-            </span>
-          </li>
-          <li>
-            <span>
-              <span>高</span>性能
-            </span>
-          </li>
-        </ul>
-
-        <h2 className={styles.subTitle}>
-          <span>低価格</span>・<span>自身で更新可能</span>な
-          <br />
-          ホームページを制作します
-        </h2>
-        <div className={styles.btns}>
-          <div className={styles.btn}>
-            <Link href="/">お問い合わせ</Link>
-          </div>
-          <div className={`${styles.btn} ${styles.rev}`}>
-            <Link href="/">料金プラン</Link>
-          </div>
-        </div>
-
-        <div className={styles.illust}>
-          <Image src={svg} alt="" />
-        </div>
-      </div> */}
-
-      {/* <About />
-
-      <Feature />
-
-      <Plan />
-
-      <Cta />
-
-      <Flow />
-
-      <Faq /> */}
-
-      {/* pattern 2 */}
       <Mv />
       <Concern />
       <Point />
@@ -103,19 +47,13 @@ export default function Home() {
           </p>
 
           <div className={styles.ctaBtns}>
-            <Link className={styles.ctaBtn} href="/contact">
-              <span>お問い合わせ</span>
-              <div className={styles.icon}>
-                <IoArrowForward />
-              </div>
-            </Link>
+            <Btn href="/contact" icon="arrow">
+              お問い合わせ
+            </Btn>
 
-            <a href={LINE_URL_TOP_CONTACT} target="_blank" className={`${styles.ctaBtn} ${styles.isLine}`}>
-              <span>LINEで相談</span>
-              <div className={styles.icon}>
-                <Image src={lineIcon2} alt="LINE" width={40} height={40} />
-              </div>
-            </a>
+            <Btn href={LINE_URL_TOP_CONTACT} icon="line" theme="secondary" isExternal>
+              LINEで相談
+            </Btn>
           </div>
         </Container>
       </div>

@@ -44,12 +44,12 @@ export default function Concern() {
             事前知識は一切必要ありませんので、お気軽にご相談ください。
           </p>
           <div className={styles.btns}>
-            <Link className={styles.btn} href="/contact">
+            <Btn href="/contact" icon="arrow">
               お問い合わせ
-            </Link>
-            <a href={LINE_URL_TOP_CONCERN} target="_blank" className={`${styles.btn} ${styles.isLine}`}>
+            </Btn>
+            <Btn href={LINE_URL_TOP_CONCERN} icon="line" theme="secondary" isExternal>
               LINEで相談
-            </a>
+            </Btn>
           </div>
         </div>
       </div>

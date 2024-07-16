@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./header.module.scss";
 import { LINE_URL_HEADER } from "@/app/_data/url";
+import HamburgerBtn from "@/app/_components/common/hamburger-btn/hamburger-btn";
 
 export default function Header() {
   return (
@@ -33,6 +34,7 @@ export default function Header() {
           LINEで相談
         </Link>
       </nav>
+      <HamburgerBtn />
     </header>
   );
 }

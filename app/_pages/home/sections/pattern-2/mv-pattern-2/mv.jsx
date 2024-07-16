@@ -3,6 +3,7 @@ import styles from "./mv.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { IoArrowForward } from "react-icons/io5";
+import Btn from "@/app/_components/common/btn/btn";
 
 export default function Mv() {
   return (
@@ -19,13 +20,14 @@ export default function Mv() {
 
       <div className={styles.btns}>
         <div className={styles.btn}>
-          <Link href="/contact">お問い合わせ</Link>
+          <Btn href="/contact" icon="arrow">
+            お問い合わせ
+          </Btn>
         </div>
-        <div className={`${styles.btnText}`}>
-          <Link href="/plan">
-            <span>料金プランを見る</span>
-            <IoArrowForward />
-          </Link>
+        <div className={styles.btn}>
+          <Btn href="/plan" theme="secondary-reverse" icon="arrow">
+            料金プランを見る
+          </Btn>
         </div>
       </div>
     </section>

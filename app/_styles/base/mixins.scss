@@ -3,7 +3,7 @@
 // breakpoints
 
 $bp-pc-large: 1441px;
-$bp-header-nav: 1300px;
+$bp-hamburger: 1100px;
 $bp-tab: 1100px;
 $bp-sp: 767px;
 
@@ -13,8 +13,8 @@ $bp-sp: 767px;
   }
 }
 
-@mixin header-nav {
-  @media (max-width: ($bp-header-nav)) {
+@mixin hamburger {
+  @media (max-width: ($bp-hamburger)) {
     @content;
   }
 }

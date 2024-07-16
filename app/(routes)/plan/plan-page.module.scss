@@ -169,8 +169,17 @@
 }
 
 .optionIcon {
+  position: relative;
   width: 3.2rem;
   flex-shrink: 0;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    object-fit: contain;
+  }
 }
 
 .optionTitle {

@@ -2,6 +2,7 @@ import Container from "@/app/_components/common/container/container";
 import Link from "next/link";
 import styles from "./faq.module.scss";
 import { IoArrowForward } from "react-icons/io5";
+import Btn from "@/app/_components/common/btn/btn";
 
 export default function Faq2() {
   return (
@@ -58,12 +59,9 @@ export default function Faq2() {
         </ul>
 
         <div className={styles.linkWrap}>
-          <Link href="/" className={styles.link}>
-            <span>よくあるご質問を見る</span>
-            <div className={styles.icon}>
-              <IoArrowForward />
-            </div>
-          </Link>
+          <Btn href="/faq" icon="arrow">
+            よくあるご質問
+          </Btn>
         </div>
       </Container>
     </section>

@@ -31,10 +31,19 @@ import logoCustomAnimation from "/public/images/common/logo-custom-animation.svg
 import Simulator from "@/app/_components/common/simulator/simulator";
 import { PLAN_METADATA } from "@/app/_data/metadata";
 import { outputMetadata } from "@/app/_utils/outputMetadata";
+import { PLAN_OPTION_DATA } from "@/app/_data/plan";
 
 export const metadata = outputMetadata(PLAN_METADATA.title, PLAN_METADATA.description, PLAN_METADATA.slug);
 
 export default function PlanPage() {
+  const freeOptions = PLAN_OPTION_DATA.filter((option) => option.categoryId === "free-option");
+
+  const paidOptions = PLAN_OPTION_DATA.filter((option) => option.categoryId === "paid-option");
+
+  const freeAnimations = PLAN_OPTION_DATA.filter((option) => option.categoryId === "free-animation");
+
+  const paidAnimations = PLAN_OPTION_DATA.filter((option) => option.categoryId === "paid-animation");
+
   return (
     <main className={styles.main}>
       <SubMv jpTitle="料金プラン" enTitle="PLANS" breadcrumbPaths={[{ name: "料金プラン" }]} hasBorder />
@@ -169,557 +178,177 @@ export default function PlanPage() {
                   <span>無料オプション</span>
                 </div>
 
-                <div className={styles.row}>
-                  <div className={styles.infoCell}>
-                    <div className={styles.infoHead}>
-                      <div className={styles.optionIcon}>
-                        <Image src={logoGa} alt="Google Analytics" />
-                      </div>
-                      <span className={styles.optionTitle}>Google Analytics導入代行</span>
-                    </div>
-                    <p className={styles.optionExp}>ホームページへのアクセス数や流入元などを解析するツールです。</p>
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                </div>
+                {freeOptions.map((item) => {
+                  const { id, name, text, iconPath, price, availablePlans } = item;
 
-                <div className={styles.row}>
-                  <div className={styles.infoCell}>
-                    <div className={styles.infoHead}>
-                      <div className={styles.optionIcon}>
-                        <Image src={logoSc} alt="Google Search Console" />
-                      </div>
-                      <span className={styles.optionTitle}>Google Search Console導入代行</span>
-                    </div>
-                    <p className={styles.optionExp}>
-                      ホームページの検索順位やクリック数などを分析するためのツールです。
-                    </p>
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                </div>
+                  return (
+                    <div className={styles.row} key={id}>
+                      <div className={styles.infoCell}>
+                        <div className={styles.infoHead}>
+                          <div className={styles.optionIcon}>
+                            <Image src={iconPath} alt={name} fill />
+                          </div>
+                          <span className={styles.optionTitle}>{name}</span>
+                        </div>
 
-                <div className={styles.row}>
-                  <div className={styles.infoCell}>
-                    <div className={styles.infoHead}>
-                      <div className={styles.optionIcon}>
-                        <Image src={logoFavicon} alt="ファビコン作成・設置" />
+                        {price.showPrice && (
+                          <span className={styles.optionPrice}>
+                            {typeof price.priceNum === "number" ? (
+                              <>
+                                <span>{price.priceNum.toLocaleString()}</span>円<small>(税込)</small> / 1
+                                {price.countUnit}
+                              </>
+                            ) : (
+                              <span>{priceNum}</span>
+                            )}
+                          </span>
+                        )}
+                        <p className={styles.optionExp}>{text}</p>
                       </div>
-                      <span className={styles.optionTitle}>ファビコン作成・設置</span>
-                    </div>
-                    <p className={styles.optionExp}>ホームページのシンボルとなるアイコンを作成・設置します。</p>
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                </div>
-
-                <div className={styles.row}>
-                  <div className={styles.infoCell}>
-                    <div className={styles.infoHead}>
-                      <div className={styles.optionIcon}>
-                        <Image src={logoGm} alt="Google Maps" />
+                      <div className={styles.cell}>
+                        {availablePlans.includes("minimal") ? <FaCheck /> : <span className={styles.bar}></span>}
                       </div>
-                      <span className={styles.optionTitle}>Google Map埋め込み</span>
-                    </div>
-                    <p className={styles.optionExp}>店舗や会社の所在地を表示するマップをホームページ内に設置します。</p>
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                </div>
-
-                <div className={styles.row}>
-                  <div className={styles.infoCell}>
-                    <div className={styles.infoHead}>
-                      <div className={styles.optionIcon}>
-                        <Image src={logoGc} alt="Google Calendar" />
+                      <div className={styles.cell}>
+                        {availablePlans.includes("basic") ? <FaCheck /> : <span className={styles.bar}></span>}
                       </div>
-                      <span className={styles.optionTitle}>Google Calendar埋め込み</span>
-                    </div>
-                    <p className={styles.optionExp}>
-                      予定やイベントのスケジュールを表示するカレンダーをホームページ内に設置します。
-                    </p>
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                </div>
-
-                <div className={styles.row}>
-                  <div className={styles.infoCell}>
-                    <div className={styles.infoHead}>
-                      <div className={styles.optionIcon}>
-                        <Image src={logoSnsTimeline} alt="SNS読み込み" />
+                      <div className={styles.cell}>
+                        {availablePlans.includes("cms") ? <FaCheck /> : <span className={styles.bar}></span>}
                       </div>
-                      <span className={styles.optionTitle}>SNS埋め込み</span>
                     </div>
-                    <p className={styles.optionExp}>
-                      Instagram・X(Twitter)・Facebookなどのタイムラインをホームページ内に設置します。
-                    </p>
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                </div>
+                  );
+                })}
 
                 <div className={`${styles.catRow} ${styles.hasMt}`}>
                   <span>有料オプション</span>
                 </div>
 
-                <div className={styles.row}>
-                  <div className={styles.infoCell}>
-                    <div className={styles.infoHead}>
-                      <div className={styles.optionIcon}>
-                        <Image src={logoRevision} alt="画像・テキスト修正の追加" />
+                {paidOptions.map((item) => {
+                  const { id, name, text, iconPath, price, availablePlans } = item;
+
+                  return (
+                    <div className={styles.row} key={id}>
+                      <div className={styles.infoCell}>
+                        <div className={styles.infoHead}>
+                          <div className={styles.optionIcon}>
+                            <Image src={iconPath} alt={name} fill />
+                          </div>
+                          <span className={styles.optionTitle}>{name}</span>
+                        </div>
+
+                        {price.showPrice && (
+                          <span className={styles.optionPrice}>
+                            {typeof price.priceNum === "number" ? (
+                              <>
+                                <span>{price.priceNum.toLocaleString()}</span>円<small>(税込)</small> / 1
+                                {price.countUnit}
+                              </>
+                            ) : (
+                              <span>{priceNum}</span>
+                            )}
+                          </span>
+                        )}
+                        <p className={styles.optionExp}>{text}</p>
                       </div>
-                      <span className={styles.optionTitle}>画像・テキスト修正の追加</span>
-                    </div>
-
-                    <span className={styles.optionPrice}>
-                      <span>3,000</span>円<small>(税込)</small> / 1回
-                    </span>
-                    <p className={styles.optionExp}>
-                      各プランの画像・テキスト修正回数の上限以上に修正が必要な場合は、1回分ずつ追加可能です。
-                    </p>
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                </div>
-
-                <div className={styles.row}>
-                  <div className={styles.infoCell}>
-                    <div className={styles.infoHead}>
-                      <div className={styles.optionIcon}>
-                        <Image src={logoAddPage} alt="ページ追加" />
+                      <div className={styles.cell}>
+                        {availablePlans.includes("minimal") ? <FaCheck /> : <span className={styles.bar}></span>}
                       </div>
-                      <span className={styles.optionTitle}>ページ追加</span>
-                    </div>
-                    <span className={styles.optionPrice}>
-                      <span>15,000</span>円<small>(税込)</small> / 1P
-                    </span>
-                    <p className={styles.optionExp}>
-                      各プランのページ数上限以上のページが必要な場合は、ページを追加可能です。
-                    </p>
-                  </div>
-                  <div className={styles.cell}>
-                    <span className={styles.bar}></span>
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                </div>
-
-                <div className={styles.row}>
-                  <div className={styles.infoCell}>
-                    <div className={styles.infoHead}>
-                      <div className={styles.optionIcon}>
-                        <Image src={logoAddSection} alt="セクション追加" />
+                      <div className={styles.cell}>
+                        {availablePlans.includes("basic") ? <FaCheck /> : <span className={styles.bar}></span>}
                       </div>
-                      <span className={styles.optionTitle}>セクション追加</span>
-                    </div>
-                    <span className={styles.optionPrice}>
-                      <span>3,000</span>円<small>(税込)</small> / 1つ
-                    </span>
-                    <p className={styles.optionExp}>
-                      ページ内にコンテンツを追加したい場合は、セクションを追加可能です。
-                      <br />
-                      ※TOPページ：6セクションまで無料
-                      <br />
-                      ※下層ページ：3セクションまで無料
-                    </p>
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                </div>
-
-                <div className={styles.row}>
-                  <div className={styles.infoCell}>
-                    <div className={styles.infoHead}>
-                      <div className={styles.optionIcon}>
-                        <Image src={logoCms} alt="お客様更新機能（投稿タイプ）の追加" />
+                      <div className={styles.cell}>
+                        {availablePlans.includes("cms") ? <FaCheck /> : <span className={styles.bar}></span>}
                       </div>
-                      <span className={styles.optionTitle}>お客様更新機能（投稿タイプ）の追加</span>
                     </div>
-                    <span className={styles.optionPrice}>
-                      <span>30,000</span>円<small>(税込)</small> / 1つ
-                    </span>
-                    <p className={styles.optionExp}>
-                      お知らせやブログの他に、「商品情報」や「物件情報」など、お客様が希望する更新可能なシステムを追加します。
-                    </p>
-                  </div>
-                  <div className={styles.cell}>
-                    <span className={styles.bar}></span>
-                  </div>
-                  <div className={styles.cell}>
-                    <span className={styles.bar}></span>
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                </div>
-
-                <div className={styles.row}>
-                  <div className={styles.infoCell}>
-                    <div className={styles.infoHead}>
-                      <div className={styles.optionIcon}>
-                        <Image src={logoCf} alt="お客様更新機能（カスタムフィールド）の追加" />
-                      </div>
-                      <span className={styles.optionTitle}>お客様更新機能（カスタムフィールド）の追加</span>
-                    </div>
-
-                    <span className={styles.optionPrice}>
-                      <span>2,000</span>円<small>(税込)</small> / 1つ
-                    </span>
-                    <p className={styles.optionExp}>
-                      ホームページ内の画像やテキストをお客様自身で更新可能にするカスタムフィールドを追加します。
-                    </p>
-                  </div>
-                  <div className={styles.cell}>
-                    <span className={styles.bar}></span>
-                  </div>
-                  <div className={styles.cell}>
-                    <span className={styles.bar}></span>
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                </div>
-
-                <div className={styles.row}>
-                  <div className={styles.infoCell}>
-                    <div className={styles.infoHead}>
-                      <div className={styles.optionIcon}>
-                        <Image src={logoAddForm} alt="フォーム追加" />
-                      </div>
-                      <span className={styles.optionTitle}>フォーム追加</span>
-                    </div>
-                    <span className={styles.optionPrice}>
-                      <span>30,000</span>円<small>(税込)</small> / 1つ
-                    </span>
-                    <p className={styles.optionExp}>
-                      お問い合わせフォーム以外に、資料請求やエントリーフォームなど、お客様が希望するフォームを追加します。
-                      <br />
-                      ※フォームは全プランで1つまで無料です。
-                    </p>
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                </div>
-
-                <div className={styles.row}>
-                  <div className={styles.infoCell}>
-                    <div className={styles.infoHead}>
-                      <div className={styles.optionIcon}>
-                        <Image src={logoSnsApi} alt="SNS連携（API）" />
-                      </div>
-                      <span className={styles.optionTitle}>SNS連携（API）</span>
-                    </div>
-                    <span className={styles.optionPrice}>
-                      <span>30,000</span>円<small>(税込)</small> / 1つ
-                    </span>
-                    <p className={styles.optionExp}>
-                      ホームページ内にSNSの投稿を表示する機能を追加します。iframe埋め込みよりも自由度の高いデザインが可能です。
-                    </p>
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                </div>
+                  );
+                })}
 
                 <div className={`${styles.catRow} ${styles.hasMt}`}>
                   <span>無料アニメーション</span>
                 </div>
 
-                <div className={styles.row}>
-                  <div className={styles.infoCell}>
-                    <div className={styles.infoHead}>
-                      <div className={styles.optionIcon}>
-                        <Image src={logoHamburgerMenu} alt="ハンバーガーメニュー" />
-                      </div>
-                      <span className={styles.optionTitle}>ハンバーガーメニュー</span>
-                    </div>
-                    <p className={styles.optionExp}>
-                      クリックすると、ナビゲーションメニューが表示される機能です。スクロール追従も無料で実装可能です。
-                    </p>
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                </div>
+                {freeAnimations.map((item) => {
+                  const { id, name, text, iconPath, price, availablePlans } = item;
 
-                <div className={styles.row}>
-                  <div className={styles.infoCell}>
-                    <div className={styles.infoHead}>
-                      <div className={styles.optionIcon}>
-                        <Image src={logoBtnAnimFree} alt="シンプルなボタンアニメーション" />
-                      </div>
-                      <span className={styles.optionTitle}>シンプルなボタンアニメーション</span>
-                    </div>
-                    <p className={styles.optionExp}>
-                      ボタンにマウスカーソルを当てた時のアニメーションを実装します。色の反転や透明度を下げるなど、シンプルな動きに限ります。
-                    </p>
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                </div>
+                  return (
+                    <div className={styles.row} key={id}>
+                      <div className={styles.infoCell}>
+                        <div className={styles.infoHead}>
+                          <div className={styles.optionIcon}>
+                            <Image src={iconPath} alt={name} fill />
+                          </div>
+                          <span className={styles.optionTitle}>{name}</span>
+                        </div>
 
-                <div className={styles.row}>
-                  <div className={styles.infoCell}>
-                    <div className={styles.infoHead}>
-                      <div className={styles.optionIcon}>
-                        <Image src={logoSimpleSlider} alt="シンプルな画像スライダー" />
+                        {price.showPrice && (
+                          <span className={styles.optionPrice}>
+                            {typeof price.priceNum === "number" ? (
+                              <>
+                                <span>{price.priceNum.toLocaleString()}</span>円<small>(税込)</small> / 1
+                                {price.countUnit}
+                              </>
+                            ) : (
+                              <span>{priceNum}</span>
+                            )}
+                          </span>
+                        )}
+                        <p className={styles.optionExp}>{text}</p>
                       </div>
-                      <span className={styles.optionTitle}>シンプルな画像スライダー</span>
-                    </div>
-                    <p className={styles.optionExp}>複数の画像やコンテンツをスライドショー形式で表示する機能です。</p>
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                </div>
-
-                <div className={styles.row}>
-                  <div className={styles.infoCell}>
-                    <div className={styles.infoHead}>
-                      <div className={styles.optionIcon}>
-                        <Image src={logoAccordion} alt="アコーディオン" />
+                      <div className={styles.cell}>
+                        {availablePlans.includes("minimal") ? <FaCheck /> : <span className={styles.bar}></span>}
                       </div>
-                      <span className={styles.optionTitle}>アコーディオン</span>
+                      <div className={styles.cell}>
+                        {availablePlans.includes("basic") ? <FaCheck /> : <span className={styles.bar}></span>}
+                      </div>
+                      <div className={styles.cell}>
+                        {availablePlans.includes("cms") ? <FaCheck /> : <span className={styles.bar}></span>}
+                      </div>
                     </div>
-                    <p className={styles.optionExp}>
-                      クリックすると中身の要素が展開される機能です。Q&Aや説明文など、コンテンツを省スペースで表示するのに便利です。
-                    </p>
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                </div>
+                  );
+                })}
 
                 <div className={`${styles.catRow} ${styles.hasMt}`}>
                   <span>有料アニメーション</span>
                 </div>
 
-                <div className={styles.row}>
-                  <div className={styles.infoCell}>
-                    <div className={styles.infoHead}>
-                      <div className={styles.optionIcon}>
-                        <Image src={logoLoading} alt="ローディングアニメーション" />
-                      </div>
-                      <span className={styles.optionTitle}>ローディングアニメーション</span>
-                    </div>
-                    <span className={styles.optionPrice}>
-                      <span>5,000</span>円<small>(税込)</small> / 1つ
-                    </span>
-                    <p className={styles.optionExp}>ページの読み込み中に表示するアニメーションです。</p>
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                </div>
+                {paidAnimations.map((item) => {
+                  const { id, name, text, iconPath, price, availablePlans } = item;
 
-                <div className={styles.row}>
-                  <div className={styles.infoCell}>
-                    <div className={styles.infoHead}>
-                      <div className={styles.optionIcon}>
-                        <Image src={logoFadein} alt="フェードインアニメーション" />
-                      </div>
-                      <span className={styles.optionTitle}>フェードインアニメーション</span>
-                    </div>
-                    <span className={styles.optionPrice}>
-                      <span>3,000</span>円<small>(税込)</small> / 1種
-                    </span>
-                    <p className={styles.optionExp}>
-                      スクロールで要素が画面内に入ると、対象に動きを付けて表示するアニメーションです。
-                    </p>
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                </div>
+                  return (
+                    <div className={styles.row} key={id}>
+                      <div className={styles.infoCell}>
+                        <div className={styles.infoHead}>
+                          <div className={styles.optionIcon}>
+                            <Image src={iconPath} alt={name} fill />
+                          </div>
+                          <span className={styles.optionTitle}>{name}</span>
+                        </div>
 
-                <div className={styles.row}>
-                  <div className={styles.infoCell}>
-                    <div className={styles.infoHead}>
-                      <div className={styles.optionIcon}>
-                        <Image src={logoBtnAnimAdvanced} alt="高度なボタンアニメーション" />
+                        {price.showPrice && (
+                          <span className={styles.optionPrice}>
+                            {typeof price.priceNum === "number" ? (
+                              <>
+                                <span>{price.priceNum.toLocaleString()}</span>円<small>(税込)</small> / 1
+                                {price.countUnit}
+                              </>
+                            ) : (
+                              <span>{price.priceNum}</span>
+                            )}
+                          </span>
+                        )}
+                        <p className={styles.optionExp}>{text}</p>
                       </div>
-                      <span className={styles.optionTitle}>高度なボタンアニメーション</span>
-                    </div>
-                    <span className={styles.optionPrice}>
-                      <span>3,000</span>円<small>(税込)</small> / 1種
-                    </span>
-                    <p className={styles.optionExp}>
-                      マウスカーソルを当てるとテキストが変化したり、アイコンが動いたりなど、高度なボタンアニメーションを実装します。
-                    </p>
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                </div>
-
-                <div className={styles.row}>
-                  <div className={styles.infoCell}>
-                    <div className={styles.infoHead}>
-                      <div className={styles.optionIcon}>
-                        <Image src={logoSliderAdvanced} alt="高度な画像スライダー" />
+                      <div className={styles.cell}>
+                        {availablePlans.includes("minimal") ? <FaCheck /> : <span className={styles.bar}></span>}
                       </div>
-                      <span className={styles.optionTitle}>高度な画像スライダー</span>
-                    </div>
-                    <span className={styles.optionPrice}>
-                      <span>5,000</span>円<small>(税込)</small> / 1種
-                    </span>
-                    <p className={styles.optionExp}>
-                      サムネイル付き画像スライダーや、モーダル連動スライダーなど、高度なスライダーを実装します。
-                    </p>
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                </div>
-
-                <div className={styles.row}>
-                  <div className={styles.infoCell}>
-                    <div className={styles.infoHead}>
-                      <div className={styles.optionIcon}>
-                        <Image src={logoCustomAnimation} alt="その他カスタムアニメーション" />
+                      <div className={styles.cell}>
+                        {availablePlans.includes("basic") ? <FaCheck /> : <span className={styles.bar}></span>}
                       </div>
-                      <span className={styles.optionTitle}>その他カスタムアニメーション</span>
+                      <div className={styles.cell}>
+                        {availablePlans.includes("cms") ? <FaCheck /> : <span className={styles.bar}></span>}
+                      </div>
                     </div>
-                    <span className={styles.optionPrice}>
-                      <span>要相談</span>
-                    </span>
-                    <p className={styles.optionExp}>
-                      ご要望に合わせて、カスタムアニメーションを実装します。上記以外のアニメーションをご希望でしたら、お気軽にご相談ください。
-                    </p>
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                  <div className={styles.cell}>
-                    <FaCheck />
-                  </div>
-                </div>
+                  );
+                })}
               </div>
             </div>
           </section>
