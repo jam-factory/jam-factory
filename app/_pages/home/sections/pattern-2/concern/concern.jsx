@@ -35,7 +35,11 @@ export default function Concern() {
 
       <div className={styles.box}>
         <div className={styles.boxInner}>
-          <p className={styles.acc}>まずは私たちにご相談ください！</p>
+          <p className={styles.acc}>
+            まずは私たちに
+            <br className={styles.brSp} />
+            ご相談ください！
+          </p>
           <p className={styles.text}>
             ビジネスを始めたての方、ホームページについてよくわからない方のために、
             <br />

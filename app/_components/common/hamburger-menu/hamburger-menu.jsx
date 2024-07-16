@@ -3,6 +3,10 @@
 import Link from "next/link";
 import { useContext } from "react";
 import { HamburgerMenuContext } from "@/app/_context/hamburger-menu-context";
+import { IoArrowForward } from "react-icons/io5";
+import Btn from "@/app/_components/common/btn/btn";
+import { LINE_URL_HAMBURGER_MENU } from "@/app/_data/url";
+
 import styles from "./hamburger-menu.module.scss";
 
 export default function HamburgerMenu() {
@@ -17,16 +21,64 @@ export default function HamburgerMenu() {
       <div className={styles.inner}>
         <ul className={styles.list}>
           <li>
-            <Link href="/#point">選ばれる理由</Link>
+            <Link href="/" onClick={closeHamburgerMenu}>
+              <span>TOP</span>
+              <IoArrowForward />
+            </Link>
           </li>
           <li>
-            <Link href="/plan">料金プラン</Link>
+            <Link href="/#point" onClick={closeHamburgerMenu}>
+              <span>選ばれる理由</span>
+              <IoArrowForward />
+            </Link>
           </li>
           <li>
-            <Link href="/#flow">制作の流れ</Link>
+            <Link href="/plan" onClick={closeHamburgerMenu}>
+              <span>料金プラン</span>
+              <IoArrowForward />
+            </Link>
           </li>
           <li>
-            <Link href="/faq">よくあるご質問</Link>
+            <Link className={styles.childLink} href="/plan#option" onClick={closeHamburgerMenu}>
+              <span>追加オプション</span>
+              <IoArrowForward />
+            </Link>
+          </li>
+          <li>
+            <Link className={styles.childLink} href="/plan#simulator" onClick={closeHamburgerMenu}>
+              <span>料金シミュレーター</span>
+              <IoArrowForward />
+            </Link>
+          </li>
+          <li>
+            <Link href="/#flow" onClick={closeHamburgerMenu}>
+              <span>制作の流れ</span>
+              <IoArrowForward />
+            </Link>
+          </li>
+          <li>
+            <Link href="/faq" onClick={closeHamburgerMenu}>
+              <span>よくあるご質問</span>
+              <IoArrowForward />
+            </Link>
+          </li>
+        </ul>
+
+        <div className={styles.btns}>
+          <Btn href="/contact" icon="arrow">
+            お問い合わせ
+          </Btn>
+          <Btn href={LINE_URL_HAMBURGER_MENU} icon="line" theme="secondary" isExternal>
+            LINEで相談
+          </Btn>
+        </div>
+
+        <ul className={styles.subLinkList}>
+          <li className={styles.subLinkItem}>
+            <Link href="/">プライバシーポリシー</Link>
+          </li>
+          <li className={styles.subLinkItem}>
+            <Link href="/">特定商取引法に基づく表記</Link>
           </li>
         </ul>
       </div>

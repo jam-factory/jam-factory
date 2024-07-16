@@ -13,12 +13,10 @@ export default function HamburgerBtn() {
 
     if (!hamburgerMenuIsOpen) {
       document.body.style.overflow = "hidden";
-      window.scrollBy(0, -1);
     }
 
     if (hamburgerMenuIsOpen) {
       document.body.style.overflow = "auto";
-      window.scrollBy(0, 1);
     }
   };
 

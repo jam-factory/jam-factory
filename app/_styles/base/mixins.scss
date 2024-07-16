@@ -5,7 +5,7 @@
 $bp-pc-large: 1441px;
 $bp-hamburger: 1100px;
 $bp-tab: 1100px;
-$bp-sp: 767px;
+$bp-sp: 768px;
 
 @mixin pc-l {
   @media (min-width: ($bp-pc-large)) {
