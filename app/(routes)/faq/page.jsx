@@ -4,6 +4,7 @@ import Container from "@/app/_components/common/container/container";
 import AccordionList from "@/app/_components/common/accordion-list/accordion-list";
 import { FAQ_METADATA } from "@/app/_data/metadata";
 import { outputMetadata } from "@/app/_utils/outputMetadata";
+import { FaChevronDown } from "react-icons/fa";
 
 const data = [
   {
@@ -84,13 +85,22 @@ export default function FaqPage() {
             <div className={styles.navCol}>
               <ul>
                 <li>
-                  <a href="#plan">料金プランについて</a>
+                  <a href="#plan">
+                    <span>料金プランについて</span>
+                    <FaChevronDown />
+                  </a>
                 </li>
                 <li>
-                  <a href="#contract">ご契約について</a>
+                  <a href="#contract">
+                    <span>ご契約について</span>
+                    <FaChevronDown />
+                  </a>
                 </li>
                 <li>
-                  <a href="#payment">お支払いについて</a>
+                  <a href="#payment">
+                    <span>お支払いについて</span>
+                    <FaChevronDown />
+                  </a>
                 </li>
               </ul>
             </div>
@@ -98,14 +108,14 @@ export default function FaqPage() {
               <div className={styles.block} id="plan">
                 <h2 data-en="plans">料金プランについて</h2>
                 <div className={styles.accordion}>
-                  <AccordionList data={data} isFirstItemOpen />
+                  <AccordionList data={data} />
                 </div>
               </div>
 
               <div className={styles.block}>
                 <h2 data-en="contract">ご契約について</h2>
                 <div className={styles.accordion}>
-                  <AccordionList data={data} isFirstItemOpen />
+                  <AccordionList data={data} />
                 </div>
               </div>
             </div>

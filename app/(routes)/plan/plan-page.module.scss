@@ -2,6 +2,10 @@
 
 .body {
   padding: 12rem 0;
+
+  @include sp {
+    padding: 8rem 0;
+  }
 }
 
 .secTitle {
@@ -12,6 +16,10 @@
   // align-items: center;
   align-items: center;
 
+  @include sp {
+    font-size: 2.4rem;
+  }
+
   &::before {
     display: block;
     content: attr(data-en);
@@ -20,6 +28,10 @@
     font-weight: 500;
     color: $c-main;
     margin-bottom: 0.8rem;
+
+    @include sp {
+      font-size: 1.2rem;
+    }
   }
 }
 
@@ -31,10 +43,18 @@
   font-weight: 500;
   margin-top: 2.4rem;
   margin-bottom: 8rem;
+
+  @include sp {
+    margin-bottom: 5.6rem;
+  }
 }
 
 .detail {
   padding: 12rem 0 0;
+
+  @include sp {
+    padding-top: 8rem;
+  }
 }
 
 .detailText {
@@ -49,6 +69,12 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 2.4rem;
   margin-top: 6.4rem;
+
+  @include sp {
+    margin-top: 3.2rem;
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
 }
 
 .detailItem {
@@ -56,10 +82,19 @@
   background-color: $c-white;
   padding: 4rem;
 
+  @include sp {
+    border-radius: 1.6rem;
+    padding: 2.4rem 1.6rem;
+  }
+
   h3 {
     text-align: center;
     border-bottom: 0.1rem solid #e7e7e7;
     padding-bottom: 1.2rem;
+
+    @include sp {
+      text-align: left;
+    }
   }
 
   p {
@@ -67,6 +102,10 @@
     font-weight: 500;
     margin-top: 1.6rem;
     line-height: 2;
+
+    @include sp {
+      font-size: 1.4rem;
+    }
   }
 
   small {
@@ -79,6 +118,10 @@
 
 .option {
   padding: 12rem 0 0;
+
+  @include sp {
+    padding-top: 8rem;
+  }
 }
 
 .tableWrap {
@@ -90,11 +133,20 @@
   border-radius: 2rem;
   overflow: hidden;
   padding: 3.2rem;
+
+  @include sp {
+    padding: 2.4rem 1.6rem 0;
+    border-radius: 1.6rem;
+  }
 }
 
 .headRow {
   display: flex;
   justify-content: flex-start;
+
+  @include sp {
+    display: none;
+  }
 
   .headCell {
     width: calc((100% - 32rem) / 3);
@@ -132,6 +184,10 @@
     &:first-child {
       width: 32rem;
     }
+
+    @include sp {
+      display: none;
+    }
   }
 }
 
@@ -161,6 +217,10 @@
 .infoCell {
   padding: 2.4rem 0;
   width: 32rem;
+
+  @include sp {
+    width: 100%;
+  }
 }
 
 .infoHead {
@@ -226,6 +286,44 @@
   color: #7f8388;
 }
 
+.optionSpRow {
+  display: none;
+
+  @include sp {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto 0;
+    max-width: 20rem;
+  }
+}
+
+.optionCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33.3%;
+  // border-right: 0.1rem solid #e7e7e7;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  span {
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  svg {
+    color: $c-main;
+    margin-top: 0.6rem;
+  }
+
+  span.bar {
+    width: 1.6rem;
+    margin-top: 1.1rem;
+  }
+}
+
 .circle {
   display: block;
   width: 2.8rem;
@@ -245,4 +343,8 @@
 
 .simulator {
   padding: 12rem 0 0;
+
+  @include sp {
+    padding-top: 8rem;
+  }
 }

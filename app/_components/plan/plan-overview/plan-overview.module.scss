@@ -98,10 +98,17 @@
 
   @include sp {
     width: 100%;
+    border-radius: 2rem;
+    padding: 4rem 2.4rem;
+    margin-top: 2.4rem;
   }
 
   &:nth-child(1) {
     border-radius: 2rem 0 0 2rem;
+
+    @include sp {
+      border-radius: 2rem;
+    }
 
     &::after {
       content: "";
@@ -118,6 +125,10 @@
     border-radius: 2rem;
     border: 0.4rem solid $c-main;
     box-shadow: 0px 0px 2rem rgba($c-main, 0.3);
+
+    @include sp {
+      margin-top: 5.6rem;
+    }
   }
 
   .popular {

@@ -72,13 +72,19 @@
   display: flex;
   justify-content: center;
   gap: 3.2rem;
-  margin-top: 3.2rem;
+  margin: 3.2rem auto 0;
   margin-bottom: 4.8rem;
+  max-width: 40rem;
+  width: 100%;
 
   @include sp {
-    gap: 2.4rem;
-    flex-direction: column;
+    gap: 2rem;
     align-items: center;
+    justify-content: space-between;
+
+    a {
+      width: calc(50% - 1rem);
+    }
   }
 }
 

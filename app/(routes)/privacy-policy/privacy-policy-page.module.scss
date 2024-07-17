@@ -2,12 +2,20 @@
 
 .body {
   padding-bottom: 12rem;
+
+  @include sp {
+    padding-bottom: 8rem;
+  }
 }
 
 .bodyContent {
   background-color: $c-white;
   padding: 10rem 3rem;
   border-radius: 1.6rem;
+
+  @include sp {
+    padding: 6.4rem 2rem;
+  }
 }
 
 .contentInner {

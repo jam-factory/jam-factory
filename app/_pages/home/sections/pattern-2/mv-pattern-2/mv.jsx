@@ -10,9 +10,13 @@ export default function Mv() {
     <section className={styles.mv}>
       <p className={styles.intro}>個人・小規模事業者様向け</p>
       <h1 className={styles.title}>
-        制作費0円！月額3,280円からの
+        制作費0円！
+        <br className={styles.brSp} />
+        月額3,280円からの
         <br />
-        サブスク型ホームページ制作サービス
+        サブスク型ホームページ
+        <br className={styles.brSp} />
+        制作サービス
       </h1>
       <div className={styles.img}>
         <Image src={svg} alt="" />
@@ -26,7 +30,7 @@ export default function Mv() {
         </div>
         <div className={styles.btn}>
           <Btn href="/plan" theme="secondary-reverse" icon="arrow">
-            料金プランを見る
+            料金プラン
           </Btn>
         </div>
       </div>

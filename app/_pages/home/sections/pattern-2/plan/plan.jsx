@@ -13,9 +13,9 @@ export default function Plan() {
         <h2>Jam Factoryの料金プラン</h2>
 
         <p className={styles.overview}>
-          料金プランはたったの2つだけ！
-          <br />
-          更新機能なしのベーシックプランと、更新機能付きのCMSプランをご用意しています。
+          ホームページの機能や規模に合わせて、
+          <br className={styles.brSp} />
+          3つのプランからお選びいただけます。
         </p>
 
         <PlanOverview />

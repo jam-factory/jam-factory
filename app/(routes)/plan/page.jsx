@@ -204,6 +204,22 @@ export default function PlanPage() {
                           </span>
                         )}
                         <p className={styles.optionExp}>{text}</p>
+
+                        {/* スマホのみ */}
+                        <div className={styles.optionSpRow}>
+                          <div className={styles.optionCell}>
+                            <span>Minimal</span>
+                            {availablePlans.includes("minimal") ? <FaCheck /> : <span className={styles.bar}></span>}
+                          </div>
+                          <div className={styles.optionCell}>
+                            <span>Basic</span>
+                            {availablePlans.includes("basic") ? <FaCheck /> : <span className={styles.bar}></span>}
+                          </div>
+                          <div className={styles.optionCell}>
+                            <span>CMS</span>
+                            {availablePlans.includes("cms") ? <FaCheck /> : <span className={styles.bar}></span>}
+                          </div>
+                        </div>
                       </div>
                       <div className={styles.cell}>
                         {availablePlans.includes("minimal") ? <FaCheck /> : <span className={styles.bar}></span>}
@@ -248,7 +264,23 @@ export default function PlanPage() {
                           </span>
                         )}
                         <p className={styles.optionExp}>{text}</p>
+                        {/* スマホのみ */}
+                        <div className={styles.optionSpRow}>
+                          <div className={styles.optionCell}>
+                            <span>Minimal</span>
+                            {availablePlans.includes("minimal") ? <FaCheck /> : <span className={styles.bar}></span>}
+                          </div>
+                          <div className={styles.optionCell}>
+                            <span>Basic</span>
+                            {availablePlans.includes("basic") ? <FaCheck /> : <span className={styles.bar}></span>}
+                          </div>
+                          <div className={styles.optionCell}>
+                            <span>CMS</span>
+                            {availablePlans.includes("cms") ? <FaCheck /> : <span className={styles.bar}></span>}
+                          </div>
+                        </div>
                       </div>
+
                       <div className={styles.cell}>
                         {availablePlans.includes("minimal") ? <FaCheck /> : <span className={styles.bar}></span>}
                       </div>
@@ -292,6 +324,21 @@ export default function PlanPage() {
                           </span>
                         )}
                         <p className={styles.optionExp}>{text}</p>
+                        {/* スマホのみ */}
+                        <div className={styles.optionSpRow}>
+                          <div className={styles.optionCell}>
+                            <span>Minimal</span>
+                            {availablePlans.includes("minimal") ? <FaCheck /> : <span className={styles.bar}></span>}
+                          </div>
+                          <div className={styles.optionCell}>
+                            <span>Basic</span>
+                            {availablePlans.includes("basic") ? <FaCheck /> : <span className={styles.bar}></span>}
+                          </div>
+                          <div className={styles.optionCell}>
+                            <span>CMS</span>
+                            {availablePlans.includes("cms") ? <FaCheck /> : <span className={styles.bar}></span>}
+                          </div>
+                        </div>
                       </div>
                       <div className={styles.cell}>
                         {availablePlans.includes("minimal") ? <FaCheck /> : <span className={styles.bar}></span>}
@@ -336,6 +383,21 @@ export default function PlanPage() {
                           </span>
                         )}
                         <p className={styles.optionExp}>{text}</p>
+                        {/* スマホのみ */}
+                        <div className={styles.optionSpRow}>
+                          <div className={styles.optionCell}>
+                            <span>Minimal</span>
+                            {availablePlans.includes("minimal") ? <FaCheck /> : <span className={styles.bar}></span>}
+                          </div>
+                          <div className={styles.optionCell}>
+                            <span>Basic</span>
+                            {availablePlans.includes("basic") ? <FaCheck /> : <span className={styles.bar}></span>}
+                          </div>
+                          <div className={styles.optionCell}>
+                            <span>CMS</span>
+                            {availablePlans.includes("cms") ? <FaCheck /> : <span className={styles.bar}></span>}
+                          </div>
+                        </div>
                       </div>
                       <div className={styles.cell}>
                         {availablePlans.includes("minimal") ? <FaCheck /> : <span className={styles.bar}></span>}

@@ -84,6 +84,7 @@ button {
   background: none;
   border: none;
   padding: 0;
+  color: inherit;
 }
 
 li {
@@ -157,4 +158,9 @@ button {
   width: 100%;
   padding: 0 3rem;
   margin: 0 auto;
+
+  @include sp {
+    padding: 0 2rem;
+    max-width: 64rem;
+  }
 }

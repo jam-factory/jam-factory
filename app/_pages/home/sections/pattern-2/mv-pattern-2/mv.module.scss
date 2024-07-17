@@ -2,17 +2,19 @@
 
 .mv {
   padding: 20rem 0 16rem;
-
   background-image: linear-gradient(0deg, transparent calc(100% - 1px), #f8f8f8 calc(100% - 1px)),
     linear-gradient(90deg, transparent calc(100% - 1px), #f8f8f8 calc(100% - 1px));
   background-color: $c-white;
   background-size: 2.4rem 2.4rem;
   background-repeat: repeat;
   background-position: center center;
-
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  @include sp {
+    padding: 12rem 2rem 8rem;
+  }
 }
 
 .intro {
@@ -23,13 +25,9 @@
   border: 0.1rem solid $c-black;
   padding: 0.2rem 0.8rem;
 
-  span {
-    // border: 0.1rem solid $c-black;
-    padding: 0 0.4rem;
-    font-family: var(--font-fig);
-    // font-weight: 900;
-    font-size: 1.8rem;
-    // border-bottom: 0.2rem solid $c-black;
+  @include sp {
+    font-size: 1.3rem;
+    padding-top: 0.3rem;
   }
 }
 
@@ -38,12 +36,22 @@
   font-weight: bold;
   text-align: center;
   margin-top: 1.6rem;
+
+  @include sp {
+    font-size: 2.8rem;
+  }
 }
 
 .img {
   max-width: 68rem;
   width: 100%;
   margin: 4rem auto 0;
+
+  @include sp {
+    width: 90%;
+    max-width: 44rem;
+    margin-top: 2.4rem;
+  }
 }
 
 .btns {
@@ -53,11 +61,24 @@
   margin-top: 4rem;
 
   @include sp {
-    flex-direction: column;
-    gap: 1.6rem;
+    gap: 2rem;
+    width: 100%;
+    justify-content: space-between;
   }
 }
 
 .btn {
   width: 22rem;
+
+  @include sp {
+    width: calc(50% - 1rem);
+  }
+}
+
+.brSp {
+  display: none;
+
+  @include sp {
+    display: block;
+  }
 }

@@ -6,7 +6,7 @@ import lineIcon from "/public/icon-line.svg";
 import { IoArrowForward } from "react-icons/io5";
 import IconLine from "../../icons/icon-line";
 
-export default function Btn({ href, isExternal, theme, icon, children }) {
+export default function Btn({ href, isExternal, theme, icon, children, ...props }) {
   const getThemeClass = (theme) => {
     switch (theme) {
       case "main": {
@@ -35,6 +35,7 @@ export default function Btn({ href, isExternal, theme, icon, children }) {
       href={href}
       className={`${styles.btn} ${themeClass}`}
       {...(isExternal && { target: "_blank", rel: "noopener noreferrer" })}
+      {...props}
     >
       <span className={styles.text}>{children}</span>
 

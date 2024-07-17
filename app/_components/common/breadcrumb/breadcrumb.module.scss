@@ -2,6 +2,9 @@
 
 .breadcrumb {
   margin-top: 8rem;
+
+  @include sp {
+  }
 }
 
 .list {

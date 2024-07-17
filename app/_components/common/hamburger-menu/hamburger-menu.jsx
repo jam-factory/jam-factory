@@ -14,6 +14,7 @@ export default function HamburgerMenu() {
 
   const closeHamburgerMenu = () => {
     setHamburgerMenuIsOpen(false);
+    document.body.style.overflow = "auto";
   };
 
   return (
@@ -65,7 +66,7 @@ export default function HamburgerMenu() {
         </ul>
 
         <div className={styles.btns}>
-          <Btn href="/contact" icon="arrow">
+          <Btn href="/contact" icon="arrow" onClick={closeHamburgerMenu}>
             お問い合わせ
           </Btn>
           <Btn href={LINE_URL_HAMBURGER_MENU} icon="line" theme="secondary" isExternal>
@@ -75,10 +76,14 @@ export default function HamburgerMenu() {
 
         <ul className={styles.subLinkList}>
           <li className={styles.subLinkItem}>
-            <Link href="/">プライバシーポリシー</Link>
+            <Link href="/privacy-policy" onClick={closeHamburgerMenu}>
+              プライバシーポリシー
+            </Link>
           </li>
           <li className={styles.subLinkItem}>
-            <Link href="/">特定商取引法に基づく表記</Link>
+            <Link href="/" onClick={closeHamburgerMenu}>
+              特定商取引法に基づく表記
+            </Link>
           </li>
         </ul>
       </div>

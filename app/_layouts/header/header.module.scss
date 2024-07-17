@@ -21,6 +21,10 @@
   @include hamburger {
     padding: 2rem 2.4rem;
   }
+
+  @include sp {
+    padding: 1.2rem 2rem;
+  }
 }
 
 .logo {

@@ -234,6 +234,10 @@
   background-color: $c-white;
   padding: 16rem 0 16rem;
 
+  @include sp {
+    padding: 8rem 0;
+  }
+
   .en {
     font-size: 1.6rem;
     font-weight: 500;
@@ -242,6 +246,10 @@
     letter-spacing: 0.1em;
     text-align: center;
     color: $c-main;
+
+    @include sp {
+      font-size: 1.2rem;
+    }
   }
 
   h2 {
@@ -250,6 +258,11 @@
     text-align: center;
     margin-top: 1.6rem;
     text-align: center;
+
+    @include sp {
+      font-size: 2.4rem;
+      margin-top: 0.8rem;
+    }
   }
 
   p {
@@ -258,6 +271,11 @@
     font-size: 1.8rem;
     line-height: 2;
     margin-top: 1.6rem;
+
+    @include sp {
+      font-size: 1.5rem;
+      line-height: 1.75;
+    }
   }
 }
 
@@ -266,6 +284,15 @@
   justify-content: center;
   gap: 4rem;
   margin-top: 4rem;
+
+  @include sp {
+    gap: 2rem;
+    margin-top: 3.2rem;
+
+    a {
+      width: calc(50% - 1rem);
+    }
+  }
 }
 
 .ctaBtn {
