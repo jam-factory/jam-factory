@@ -1,9 +1,8 @@
-import svg from "/public/mv-flat-illust.svg";
 import styles from "./mv.module.scss";
-import Image from "next/image";
 import Link from "next/link";
 import { IoArrowForward } from "react-icons/io5";
 import Btn from "@/app/_components/common/btn/btn";
+import MvImg from "@/app/_components/home/mv-img/mv-img";
 
 export default function Mv() {
   return (
@@ -18,9 +17,8 @@ export default function Mv() {
         <br className={styles.brSp} />
         制作サービス
       </h1>
-      <div className={styles.img}>
-        <Image src={svg} alt="" />
-      </div>
+
+      <MvImg />
 
       <div className={styles.btns}>
         <div className={styles.btn}>

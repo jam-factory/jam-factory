@@ -126,6 +126,10 @@
 
 .tableWrap {
   margin-top: 6.4rem;
+
+  @include sp {
+    margin-top: 3.2rem;
+  }
 }
 
 .table {

@@ -6,6 +6,7 @@ $bp-pc-large: 1441px;
 $bp-hamburger: 1100px;
 $bp-tab: 1100px;
 $bp-sp: 768px;
+$bp-sp-s: 550px;
 
 @mixin pc-l {
   @media (min-width: ($bp-pc-large)) {
@@ -27,6 +28,12 @@ $bp-sp: 768px;
 
 @mixin sp {
   @media (max-width: ($bp-sp)) {
+    @content;
+  }
+}
+
+@mixin sp-s {
+  @media (max-width: ($bp-sp-s)) {
     @content;
   }
 }

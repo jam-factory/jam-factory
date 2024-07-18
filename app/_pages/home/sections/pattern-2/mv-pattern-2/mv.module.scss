@@ -42,27 +42,16 @@
   }
 }
 
-.img {
-  max-width: 68rem;
-  width: 100%;
-  margin: 4rem auto 0;
-
-  @include sp {
-    width: 90%;
-    max-width: 44rem;
-    margin-top: 2.4rem;
-  }
-}
-
 .btns {
   display: flex;
   align-items: center;
   gap: 4rem;
-  margin-top: 4rem;
+  margin: 4rem auto 0;
 
   @include sp {
     gap: 2rem;
     width: 100%;
+    max-width: 50rem;
     justify-content: space-between;
   }
 }

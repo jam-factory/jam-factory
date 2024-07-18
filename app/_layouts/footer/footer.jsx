@@ -72,6 +72,19 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
+
+            <ul className={styles.subNav}>
+              <li className={styles.subNavItem}>
+                <Link href="/privacy-policy" className={styles.subNavLink}>
+                  プライバシーポリシー
+                </Link>
+              </li>
+              <li className={styles.subNavItem}>
+                <Link href="/" className={styles.subNavLink}>
+                  特定商取引法に基づく表記
+                </Link>
+              </li>
+            </ul>
           </nav>
         </div>
 
