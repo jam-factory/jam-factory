@@ -24,7 +24,7 @@ import { TOP_METADATA } from "../_data/metadata";
 import { outputMetadata } from "../_utils/outputMetadata";
 import Btn from "../_components/common/btn/btn";
 
-export const metadata = outputMetadata(TOP_METADATA.title, TOP_METADATA.description, TOP_METADATA.slug);
+export const metadata = outputMetadata(null, TOP_METADATA.description, TOP_METADATA.slug);
 
 export default function Home() {
   return (
