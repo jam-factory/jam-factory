@@ -30,11 +30,14 @@
   }
 }
 
+.logoCol {
+  width: 28rem;
+  flex-shrink: 0;
+}
+
 .logo {
-  color: $c-white;
   display: flex;
-  flex-direction: column;
-  white-space: nowrap;
+  width: 24rem;
   transition: opacity 0.3s;
 
   @include hover {
@@ -63,7 +66,7 @@
 .text {
   font-size: 1.3rem;
   font-weight: 500;
-  margin-top: 1.6rem;
+  margin-top: 2.4rem;
   line-height: 2;
 
   @include sp {
@@ -72,7 +75,7 @@
 
 .nav {
   color: $c-white;
-  padding-top: 3.6rem;
+  padding-top: 1.4rem;
 
   @include sp {
     max-width: 50rem;

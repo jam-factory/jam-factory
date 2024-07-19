@@ -5,6 +5,8 @@ import { IoArrowForward } from "react-icons/io5";
 import styles from "./footer.module.scss";
 import IconLine from "@/app/_components/icons/icon-line";
 import { LINE_URL_FOOTER } from "@/app/_data/url";
+import logoWhite from "/public/images/common/logo-white.svg";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -13,8 +15,7 @@ export default function Footer() {
         <div className={styles.row}>
           <div className={styles.logoCol}>
             <Link href="/" className={styles.logo}>
-              <span className={styles.en}>Jam Factory</span>
-              <span className={styles.jp}>ジャムファクトリー</span>
+              <Image src={logoWhite} alt="ジャムファクトリー" />
             </Link>
             <p className={styles.text}>
               個人・小規模事業者様向けの

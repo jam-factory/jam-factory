@@ -26,19 +26,23 @@
     top: 0.2rem;
   }
 
+  &::after {
+    content: "";
+    width: 1.6rem;
+    height: 1.6rem;
+    background-image: url("/images/common/icon-check-main.svg");
+    background-size: 0, 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    left: 0.4rem;
+    top: 0.5rem;
+  }
+
   &.isChecked {
     &::after {
-      content: "";
-      width: 1.6rem;
-      height: 1.6rem;
-      background-image: url("/images/common/icon-check-main.svg");
       background-size: contain;
-      background-position: center center;
-      background-repeat: no-repeat;
-      display: block;
-      position: absolute;
-      left: 0.4rem;
-      top: 0.5rem;
     }
   }
 

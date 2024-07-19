@@ -28,15 +28,16 @@
 }
 
 .logo {
-  font-family: var(--font-fig);
-  font-size: 3.2rem;
-  font-weight: 900;
-  color: #314156;
-  letter-spacing: 0;
+  width: 19rem;
   transition: opacity 0.3s;
   display: flex;
   flex-direction: column;
   pointer-events: auto;
+
+  @include sp {
+    width: 16rem;
+    margin-top: 0.8rem;
+  }
 
   span {
     letter-spacing: 0;

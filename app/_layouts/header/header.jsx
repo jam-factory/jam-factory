@@ -2,15 +2,14 @@ import Link from "next/link";
 import styles from "./header.module.scss";
 import { LINE_URL_HEADER } from "@/app/_data/url";
 import HamburgerBtn from "@/app/_components/common/hamburger-btn/hamburger-btn";
+import logo from "/public/images/common/logo.svg";
+import Image from "next/image";
 
 export default function Header() {
   return (
     <header className={styles.header}>
       <Link href="/" className={styles.logo}>
-        <span>
-          <span>Jam</span> Factory
-        </span>
-        <span>ジャムファクトリー</span>
+        <Image src={logo} alt="ジャムファクトリー" />
       </Link>
       <nav className={styles.nav}>
         <ul className={styles.list}>

@@ -3,6 +3,8 @@ import styles from "./concern.module.scss";
 import Btn from "@/app/_components/common/btn/btn";
 import Link from "next/link";
 import { LINE_URL_TOP_CONCERN } from "@/app/_data/url";
+import icon from "/public/images/common/concern.svg";
+import Image from "next/image";
 
 export default function Concern() {
   return (
@@ -31,37 +33,42 @@ export default function Concern() {
             <p>バージョン管理やドメイン取得など、難しい・・・</p>
           </li>
         </ul>
-      </Container>
 
-      <div className={styles.box}>
-        <div className={styles.boxInner}>
-          <p className={styles.acc}>
-            まずは私たちに
-            <br className={styles.brSp} />
-            ご相談ください！
-          </p>
-          <p className={styles.text}>
-            ビジネスを始めたての方、ホームページについてよくわからない方のために、
-            <br />
-            親身になってサポートします。
-            <br />
-            事前知識は一切必要ありませんので、お気軽にご相談ください。
-          </p>
-          <div className={styles.btns}>
-            <Btn href="/contact" icon="arrow">
-              お問い合わせ
-            </Btn>
-            <Btn href={LINE_URL_TOP_CONCERN} icon="line" theme="secondary" isExternal>
-              LINEで相談
-            </Btn>
+        <div className={styles.box}>
+          <div className={styles.boxInner}>
+            <p className={styles.acc}>
+              そのお悩み、
+              <br className={styles.brSp} />
+              私たちが解決します！
+            </p>
+            <div className={styles.boxImg}>
+              <Image src={icon} alt="" />
+            </div>
+            <p className={styles.accSub}>
+              ジャムファクトリーは、<span>サブスクリプション型</span>のホームページ制作サービスです。
+              <br />
+              <span>初期費用・制作費用・解約費用は一切かかりません。</span>
+              <br />
+              初期費用を抑えつつホームページを運用したい方は、ぜひご相談ください。
+            </p>
+            {/* <p className={styles.text}>
+              ビジネスを始めたての方、ホームページについてよくわからない方のために、
+              <br />
+              親身になってサポートします。
+              <br />
+              事前知識は一切必要ありませんので、お気軽にご相談ください。
+            </p> */}
+            <div className={styles.btns}>
+              <Btn href="/contact" icon="arrow">
+                お問い合わせ
+              </Btn>
+              <Btn href={LINE_URL_TOP_CONCERN} icon="line" theme="secondary" isExternal>
+                LINEで相談
+              </Btn>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div className={styles.bg}>
-        <span>CONTACT US! CONTACT US! CONTACT US! CONTACT US! </span>
-        <span>CONTACT US! CONTACT US! CONTACT US! CONTACT US! </span>
-      </div>
+      </Container>
     </section>
   );
 }
