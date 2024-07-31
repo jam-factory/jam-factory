@@ -8,6 +8,11 @@ const getSubCategory = (subCategoryId) => {
   return FAQ_SUB_CAT_DATA.find((item) => item.id === subCategoryId);
 };
 
+export const filteredFAQsForTopPage = () => {
+  // faq_dataからinTopPageがtrueのものだけを取得
+  return FAQ_DATA.filter((faq) => faq.inTopPage);
+};
+
 export const groupFAQs = (data) => {
   return data.reduce((acc, faq) => {
     // カテゴリとサブカテゴリをFAQデータのIDから取得

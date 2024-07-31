@@ -3,8 +3,11 @@ import Link from "next/link";
 import styles from "./faq.module.scss";
 import { IoArrowForward } from "react-icons/io5";
 import Btn from "@/app/_components/common/btn/btn";
+import { filteredFAQsForTopPage } from "@/app/_utils/faq";
 
 export default function Faq2() {
+  const data = filteredFAQsForTopPage();
+
   return (
     <section className={styles.faq}>
       <Container>
@@ -12,50 +15,20 @@ export default function Faq2() {
         <h2>よくあるご質問</h2>
 
         <ul className={styles.list}>
-          <li className={styles.item}>
-            <div className={styles.question}>
-              <span className={styles.qIcon}>Q.</span>
-              <h3>サーバーの設定やドメインの取得は必要ですか？</h3>
-            </div>
-            <div className={styles.answer}>
-              <span className={styles.aIcon}>A.</span>
-              <div>
-                <p>
-                  いいえ、必要ありません。サーバーの設定やドメインの取得、SSL証明書の取得など、面倒な作業は全て私たちが対応します！
-                </p>
+          {data.map((faq) => (
+            <li className={styles.item}>
+              <div className={styles.question}>
+                <span className={styles.qIcon}>Q.</span>
+                <h3>{faq.question}</h3>
               </div>
-            </div>
-          </li>
-          <li className={styles.item}>
-            <div className={styles.question}>
-              <span className={styles.qIcon}>Q.</span>
-              <h3>サーバー代やドメイン代などは月額料金に含まれますか？</h3>
-            </div>
-            <div className={styles.answer}>
-              <span className={styles.aIcon}>A.</span>
-              <div>
-                <p>
-                  はい、全ての費用が月額料金に含まれております。追加料金は有料オプションをご希望の場合のみ発生します。
-                </p>
+              <div className={styles.answer}>
+                <span className={styles.aIcon}>A.</span>
+                <div>
+                  <p>{faq.answer}</p>
+                </div>
               </div>
-            </div>
-          </li>
-          <li className={styles.item}>
-            <div className={styles.question}>
-              <span className={styles.qIcon}>Q.</span>
-              <h3>解約する場合は、違約金がかかりますか？</h3>
-            </div>
-            <div className={styles.answer}>
-              <span className={styles.aIcon}>A.</span>
-              <div>
-                <p>
-                  いいえ、違約金は発生しませんので、いつでも解約可能です。ただし、解約申込をした月の翌月分の費用が発生します。
-                  <br />
-                  年契約の場合は返金できません。
-                </p>
-              </div>
-            </div>
-          </li>
+            </li>
+          ))}
         </ul>
 
         <div className={styles.linkWrap}>

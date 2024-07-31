@@ -10,8 +10,16 @@ export const FAQ_CAT_DATA = [
     name: "サービス内容について",
   },
   {
+    id: "support",
+    name: "公開後サポートについて",
+  },
+  {
     id: "contract",
     name: "ご契約・解約について",
+  },
+  {
+    id: "payment",
+    name: "お支払いについて",
   },
 ];
 
@@ -58,6 +66,17 @@ export const FAQ_SUB_CAT_DATA = [
     id: "seo",
     name: "SEO対策",
   },
+  //　公開後サポートについて
+  {
+    parendId: "support",
+    id: "update",
+    name: "更新・修正対応",
+  },
+  {
+    parendId: "support",
+    id: "maintenance",
+    name: "メンテナンス",
+  },
   // ご契約・解約について
   {
     parendId: "contract",
@@ -69,15 +88,58 @@ export const FAQ_SUB_CAT_DATA = [
     id: "cancellation",
     name: "解約",
   },
+  // お支払いについて
+  {
+    parentId: "payment",
+    id: "method",
+    name: "お支払い方法",
+  },
 ];
 
 export const FAQ_DATA = [
   {
     categoryId: "dev",
     subCategoryId: "plan",
+    question: "ホームページの知識が一切ないのですが、相談しながら制作していただけますか？",
+    answer: (
+      <>
+        もちろんです！ジャムファクトリーは、ホームページの知識がない方でも安心してご利用いただけるサービスです。ホームページ制作のプロがお客様のニーズやご要望に合わせて、最適なホームページを提案＆制作いたします。
+      </>
+    ),
+    inTopPage: true,
+  },
+  {
+    categoryId: "dev",
+    subCategoryId: "plan",
+    question: "他社のホームページ制作サービスと迷っています。無料で相談に乗っていただけますか？",
+    answer: (
+      <>
+        はい、公式LINEやメール、ビデオ通話で無料相談を受け付けております。
+        <br />
+        ご検討中のサービスと比較しながら、お客様の視点に立ってメリット・デメリットを提示した上で、最適なサービスをご提案いたします。
+      </>
+    ),
+    inTopPage: true,
+  },
+  {
+    categoryId: "dev",
+    subCategoryId: "plan",
     question: "制作期間はどのくらいかかりますか？",
     answer: <>プランや追加オプションの内容にもよりますが、約2週間~1ヶ月を想定しています。</>,
     inTopPage: false,
+  },
+  {
+    categoryId: "dev",
+    subCategoryId: "plan",
+    question: "本当に月額料金以外は一切かからないのですか？",
+    answer: (
+      <>
+        はい、制作費用やサーバー・ドメイン費用は保守運用費は月額料金に含まれていますので、月額料金以外は一切かかりません。
+        <br />
+        有料の追加オプションをご利用いただく場合は別途料金がかかりますが、無料オプションのみで本格的なホームページが作成できるよう設定しております。
+      </>
+    ),
+    inTopPage: true,
   },
   {
     categoryId: "dev",
@@ -290,12 +352,68 @@ export const FAQ_DATA = [
     ),
     inTopPage: false,
   },
+  // 公開後サポートについて
+  // // 更新
+  {
+    categoryId: "support",
+    subCategoryId: "update",
+    question: "更新代行は何回までお願いできますか？",
+    answer: (
+      <>
+        Minimalプランなら月1回まで、Basicプラン・CMSプランでは月3回まで可能です。更新したいページと更新したい内容をご連絡ください。プラン毎に設定している回数以上の更新や、大幅な変更に関しては、別途料金をいただきます。
+      </>
+    ),
+    inTopPage: false,
+  },
+  {
+    categoryId: "support",
+    subCategoryId: "update",
+    question: "更新の依頼は、どのようにすればよいですか？",
+    answer: (
+      <>
+        公式LINE、メール、その他ご希望のツールにて修正を承っております。更新されたい箇所と、変更内容の詳細をお送りください。
+      </>
+    ),
+    inTopPage: false,
+  },
+  {
+    categoryId: "support",
+    subCategoryId: "update",
+    question: "ホームページの更新にかかる時間はどの程度ですか？",
+    answer: <>基本的には即日〜翌営業日対応を心がけておりますが、更新量が多い場合、お時間をいただく場合がございます。</>,
+    inTopPage: false,
+  },
+  {
+    categoryId: "support",
+    subCategoryId: "update",
+    question: "どの程度の更新内容まで料金内で対応できますか？",
+    answer: (
+      <>
+        テキストや画像の差し替え・画像加工など、1回の更新作業にかかる時間が30分程度のものを対象としております。
+        <br />
+        コンテンツの大幅な修正やデザインの変更など、工数が大きくかかる場合は追加料金にて対応させていただきます。
+      </>
+    ),
+    inTopPage: false,
+  },
+  // // メンテナンス
+  {
+    categoryId: "support",
+    subCategoryId: "maintenance",
+    question: "メンテナンスは具体的に何をしてくれますか？",
+    answer: (
+      <>
+        開発環境の定期的なアップデート、セキュリティ対策、サーバーの監視など、ホームページが安定して表示されるようにサポートいたします。
+      </>
+    ),
+    inTopPage: false,
+  },
   // ご契約・解約について
   {
     categoryId: "contract",
     subCategoryId: "agreement",
     question: "契約期間はどうなっていますか？",
-    answer: <>1ヶ月契約、1年契約からお選びいただけます。</>,
+    answer: <>月払いなら1ヶ月毎の更新、年払いなら1年毎の更新となります。</>,
     inTopPage: false,
   },
   {
@@ -330,7 +448,7 @@ export const FAQ_DATA = [
   {
     categoryId: "contract",
     subCategoryId: "cancellation",
-    question: "解約する場合に違約金は発生しますか？",
+    question: "解約する場合は違約金は発生しますか？",
     answer: (
       <>
         いいえ、違約金は発生しませんので、いつでも解約可能です。ただし、月払いの場合は解約申込をした月の翌月分の費用が発生します。
@@ -345,6 +463,15 @@ export const FAQ_DATA = [
     subCategoryId: "cancellation",
     question: "解約した場合、独自ドメインを移管して利用できますか？",
     answer: <>はい、ご利用いただけます。ご連絡いただき次第、ドメイン移管の手続きを行います。</>,
+    inTopPage: false,
+  },
+  // お支払いについて
+  // // 支払い方法
+  {
+    categoryId: "payment",
+    subCategoryId: "method",
+    question: "支払い方法は何がありますか？",
+    answer: <>クレジットカード決済、銀行振込、コンビニ決済、PayPal決済に対応しております。</>,
     inTopPage: false,
   },
 ];
