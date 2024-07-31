@@ -60,7 +60,7 @@
 .questionText {
   font-size: 2rem;
   font-weight: bold;
-  padding: 0.4rem 0;
+  padding: 0.5rem 0 0.3rem;
 
   @include sp {
     font-size: 1.6rem;
@@ -107,6 +107,11 @@
   overflow: hidden;
   padding: 1rem 4rem 1rem 1rem;
   box-sizing: content-box;
+
+  a {
+    color: $c-link;
+    text-decoration: underline;
+  }
 }
 
 .answerContent {

@@ -18,36 +18,33 @@
       font-size: 2.4rem;
     }
   }
+
+  h3 {
+    border-bottom: 0.2rem solid #dfdfe6;
+    padding-bottom: 0.8rem;
+    font-size: 2.4rem;
+
+    @include sp {
+      font-size: 2rem;
+    }
+  }
 }
 
 .bodyRow {
   display: flex;
-  gap: 3rem;
-
-  @include sp {
-    flex-direction: column;
-    gap: 2.4rem;
-  }
+  flex-direction: column;
 }
 
 .navCol {
-  width: 26rem;
-  flex-shrink: 0;
-
-  @include sp {
-    width: 100%;
-  }
-
   ul {
-    position: sticky;
-    top: 12rem;
-    left: 0;
-    display: grid;
-    gap: 1.6rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
 
     @include sp {
-      position: static;
-      gap: 1.2rem;
+      gap: 1.6rem;
+      flex-direction: column;
     }
 
     li {
@@ -56,31 +53,36 @@
         font-weight: bold;
         display: flex;
         align-items: center;
+        transition: color 0.3s;
 
         @include sp {
           font-size: 1.5rem;
         }
 
-        &::before {
-          content: "";
-          width: 2.4rem;
-          height: 1px;
-          background-color: $c-black;
-          margin-right: 1.2rem;
-
-          @include sp {
-            display: none;
+        @include hover {
+          &:hover {
+            color: $c-main;
           }
         }
+
+        // &::before {
+        //   content: "";
+        //   width: 2.4rem;
+        //   height: 1px;
+        //   background-color: $c-black;
+        //   margin-right: 1.2rem;
+
+        //   @include sp {
+        //     display: none;
+        //   }
+        // }
 
         svg {
           display: none;
 
-          @include sp {
-            display: block;
-            color: $c-main;
-            margin-left: 0.4rem;
-          }
+          display: block;
+          color: $c-main;
+          margin-left: 0.4rem;
         }
       }
     }
@@ -90,12 +92,21 @@
 .blocks {
   flex-grow: 1;
   display: grid;
-  gap: 12rem;
+}
+
+.block {
+  padding-top: 12rem;
 
   @include sp {
-    gap: 6.4rem;
-    margin-top: 4rem;
+    padding-top: 6.4rem;
   }
+}
+
+.subBlocks {
+  width: 100%;
+  display: grid;
+  gap: 6.4rem;
+  margin-top: 4rem;
 }
 
 .accordion {

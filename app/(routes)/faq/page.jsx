@@ -5,76 +5,19 @@ import AccordionList from "@/app/_components/common/accordion-list/accordion-lis
 import { FAQ_METADATA } from "@/app/_data/metadata";
 import { outputMetadata } from "@/app/_utils/outputMetadata";
 import { FaChevronDown } from "react-icons/fa";
-
-const data = [
-  {
-    question: "テンプレートデザインとはどういうことですか？",
-    answer: (
-      <>
-        <p>
-          Webサイトによく使用されるセクションや機能などを部品化し、それを組み合わせてページを作成することです。シンプルプラン・ベーシックプランをご希望の場合は、この方法でWebサイトを制作させていただくことになります。全く同じデザインを流用するのではなく、サイトに合わせて色や形など微調整することは可能です。
-        </p>
-      </>
-    ),
-  },
-  {
-    question: "自身でデザインの変更をしたいのですが、可能ですか？",
-    answer: (
-      <>
-        <p>仕様上お客様が操作できるのは投稿の編集・更新のみですので、デザインを変更することはできません。</p>
-        <p>
-          Webサイト公開後にデザインの修正をご希望の場合は、保守管理・運用のプランに入会いただくことを推奨しております。
-        </p>
-      </>
-    ),
-  },
-  {
-    question: "保守管理・運用のプランの契約期間はどのくらいですか？",
-    answer: (
-      <>
-        <p>最低1年間の契約とさせていただいております。</p>
-      </>
-    ),
-  },
-  {
-    question: "保守管理・運用は必要ないので、Webサイトの制作のみをお願いできますか？",
-    answer: (
-      <>
-        <p>
-          Webサイトの制作のみでも対応可能です。この場合、Webサイトの公開はお客様自身で行なっていただく必要があります。また、デザインの変更やページの追加等にはコーディングの知識が必要となりますので、ご了承ください。
-        </p>
-      </>
-    ),
-  },
-  {
-    question: "ランディングページの制作はしていただけますか？",
-    answer: (
-      <>
-        <p>カスタムプランを選択いただいた場合は、オリジナルのデザインで制作いたします。</p>
-      </>
-    ),
-  },
-  {
-    question: "デザインはこちらで用意するので、サイトの実装のみを対応していただけますか？",
-    answer: (
-      <>
-        <p>はい、可能です。この場合はカスタムプランになりますので、費用の詳細はお問い合わせからご相談ください。</p>
-      </>
-    ),
-  },
-  {
-    question: "基本料金、保守管理・運用費以外に費用はかかりますか？",
-    answer: (
-      <>
-        <p>ドメイン代はお客様負担となります。</p>
-      </>
-    ),
-  },
-];
+import { groupFAQs } from "@/app/_utils/faq";
+import { FAQ_DATA, FAQ_CAT_DATA } from "@/app/_data/faq";
+import { FaCircleArrowDown } from "react-icons/fa6";
 
 export const metadata = outputMetadata(FAQ_METADATA.title, FAQ_METADATA.description, FAQ_METADATA.slug);
 
 export default function FaqPage() {
+  const groupedFAQs = groupFAQs(FAQ_DATA);
+
+  const getCategoryId = (categoryName) => {
+    return FAQ_CAT_DATA.find((item) => item.name === categoryName).id;
+  };
+
   return (
     <main className={styles.main}>
       <SubMv jpTitle="よくあるご質問" enTitle="Q&A" breadcrumbPaths={[{ name: "よくあるご質問" }]} />
@@ -84,40 +27,37 @@ export default function FaqPage() {
           <div className={styles.bodyRow}>
             <div className={styles.navCol}>
               <ul>
-                <li>
-                  <a href="#plan">
-                    <span>料金プランについて</span>
-                    <FaChevronDown />
-                  </a>
-                </li>
-                <li>
-                  <a href="#contract">
-                    <span>ご契約について</span>
-                    <FaChevronDown />
-                  </a>
-                </li>
-                <li>
-                  <a href="#payment">
-                    <span>お支払いについて</span>
-                    <FaChevronDown />
-                  </a>
-                </li>
+                {
+                  // ここにFAQ_CAT_DATAを使ってリストを生成
+                  FAQ_CAT_DATA.map((category) => (
+                    <li key={category.id}>
+                      <a href={`#${category.id}`}>
+                        <span>{category.name}</span>
+                        <FaCircleArrowDown />
+                      </a>
+                    </li>
+                  ))
+                }
               </ul>
             </div>
             <div className={styles.blocks}>
-              <div className={styles.block} id="plan">
-                <h2 data-en="plans">料金プランについて</h2>
-                <div className={styles.accordion}>
-                  <AccordionList data={data} />
-                </div>
-              </div>
-
-              <div className={styles.block}>
-                <h2 data-en="contract">ご契約について</h2>
-                <div className={styles.accordion}>
-                  <AccordionList data={data} />
-                </div>
-              </div>
+              {Object.keys(groupedFAQs).map((category) => {
+                return (
+                  <div key={category} className={styles.block} id={getCategoryId(category)}>
+                    <h2>{category}</h2>
+                    <div className={styles.subBlocks}>
+                      {Object.keys(groupedFAQs[category]).map((subCategory) => (
+                        <div key={subCategory} className={styles.subBlock}>
+                          <h3>{subCategory}</h3>
+                          <div className={styles.accordion}>
+                            <AccordionList data={groupedFAQs[category][subCategory]} />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </Container>
