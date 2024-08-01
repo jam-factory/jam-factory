@@ -414,19 +414,19 @@ export const PLAN_DATA = [
   {
     planId: "minimal",
     planName: "Minimal",
-    monthlyPrice: 3280,
-    yearlyPrice: 36080,
+    monthlyPrice: 5980,
+    yearlyPrice: 65780,
   },
   {
     planId: "basic",
     planName: "Basic",
-    monthlyPrice: 5480,
-    yearlyPrice: 60280,
+    monthlyPrice: 8980,
+    yearlyPrice: 98780,
   },
   {
     planId: "cms",
     planName: "CMS",
-    monthlyPrice: 9980,
-    yearlyPrice: 109780,
+    monthlyPrice: 12980,
+    yearlyPrice: 142780,
   },
 ];

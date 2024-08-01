@@ -1,11 +1,17 @@
 "use client";
 import { useState } from "react";
 import { FaCheck } from "react-icons/fa6";
+import { PLAN_DATA } from "@/app/_data/plan";
 
 import styles from "./plan-overview.module.scss";
 
 export default function PlanOverview() {
   const [activeTab, setActiveTab] = useState("monthly");
+
+  const planMinimalData = PLAN_DATA.find((plan) => plan.planId === "minimal");
+  const planBasicData = PLAN_DATA.find((plan) => plan.planId === "basic");
+  const planCmsData = PLAN_DATA.find((plan) => plan.planId === "cms");
+
   return (
     <>
       <div className={styles.toggle}>
@@ -42,11 +48,11 @@ export default function PlanOverview() {
             ¥
             {activeTab === "yearly" ? (
               <>
-                <span>36,080</span>/年
+                <span>{planMinimalData.yearlyPrice.toLocaleString()}</span>/年
               </>
             ) : (
               <>
-                <span>3,280</span>/月
+                <span>{planMinimalData.monthlyPrice.toLocaleString()}</span>/月
               </>
             )}
             <small>(税込)</small>
@@ -105,11 +111,11 @@ export default function PlanOverview() {
             ¥
             {activeTab === "yearly" ? (
               <>
-                <span>60,280</span>/年
+                <span>{planBasicData.yearlyPrice.toLocaleString()}</span>/年
               </>
             ) : (
               <>
-                <span>5,480</span>/月
+                <span>{planBasicData.monthlyPrice.toLocaleString()}</span>/月
               </>
             )}
             <small>(税込)</small>
@@ -171,11 +177,11 @@ export default function PlanOverview() {
             ¥
             {activeTab === "yearly" ? (
               <>
-                <span>109,780</span>/年
+                <span>{planCmsData.yearlyPrice.toLocaleString()}</span>/年
               </>
             ) : (
               <>
-                <span>9,980</span>/月
+                <span>{planCmsData.monthlyPrice.toLocaleString()}</span>/月
               </>
             )}
             <small>(税込)</small>
