@@ -197,6 +197,15 @@ export default function PrivacyPolicyPage() {
                     当方が別途定める場合を除いて、変更後のプライバシーポリシーは、本ウェブサイトに掲載したときから効力を生じるものとします。
                   </li>
                 </ol>
+
+                <h2>第15条（苦情や相談の担当窓口）</h2>
+                <p>
+                  当方は、個人情報の取扱いに関する担当窓口及び責任者を以下の通り設けます。
+                  <br />
+                  メールアドレス：jam.factory.subscription@gmail.com
+                  <br />
+                  個人情報苦情・相談窓口責任者 赤尾 起弥
+                </p>
               </UserContent>
             </div>
           </div>
