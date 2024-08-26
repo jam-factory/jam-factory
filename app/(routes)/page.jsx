@@ -23,6 +23,7 @@ import { LINE_URL_TOP_CONTACT } from "@/app/_data/url";
 import { TOP_METADATA } from "../_data/metadata";
 import { outputMetadata } from "../_utils/outputMetadata";
 import Btn from "../_components/common/btn/btn";
+import Demo from "../_pages/home/sections/demo/demo";
 
 export const metadata = outputMetadata(null, TOP_METADATA.description, TOP_METADATA.slug);
 
@@ -33,6 +34,7 @@ export default function Home() {
       <Concern />
       <Point />
       <Plan />
+      <Demo />
       <Flow2 />
       <Faq2 />
 

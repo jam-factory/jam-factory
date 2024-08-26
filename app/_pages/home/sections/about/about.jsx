@@ -1,6 +1,5 @@
 import Container from "@/app/_components/common/container/container";
 import styles from "./about.module.scss";
-import Link from "next/link";
 import Btn from "@/app/_components/common/btn/btn";
 
 export default function About() {
@@ -10,13 +9,8 @@ export default function About() {
         <h2>Jam Factoryのホームページ制作</h2>
 
         <div className={styles.text}>
-          <p>
-            Jam
-            Factoryは、月額6,980円から格安サイトを制作・保守運用するサービスです。
-          </p>
-          <p>
-            サーバー代・ドメイン代・初期費用は無料で、クオリティの高いホームページを作成いたします。
-          </p>
+          <p>Jam Factoryは、月額6,980円から格安サイトを制作・保守運用するサービスです。</p>
+          <p>サーバー代・ドメイン代・初期費用は無料で、クオリティの高いホームページを作成いたします。</p>
         </div>
 
         <ul className={styles.list}>
