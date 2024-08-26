@@ -34,6 +34,12 @@ export default function HamburgerMenu() {
             </Link>
           </li>
           <li>
+            <Link href="/#demo" onClick={closeHamburgerMenu}>
+              <span>デモサイト</span>
+              <IoArrowForward />
+            </Link>
+          </li>
+          <li>
             <Link href="/plan" onClick={closeHamburgerMenu}>
               <span>料金プラン</span>
               <IoArrowForward />

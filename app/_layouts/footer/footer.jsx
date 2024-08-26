@@ -32,6 +32,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li className={styles.navCol}>
+                <Link className={styles.navLink} href="/#demo">
+                  デモサイト
+                </Link>
+              </li>
+              <li className={styles.navCol}>
                 <Link className={styles.navLink} href="/plan">
                   料金プラン
                 </Link>

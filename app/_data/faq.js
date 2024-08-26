@@ -471,7 +471,7 @@ export const FAQ_DATA = [
     categoryId: "payment",
     subCategoryId: "method",
     question: "支払い方法は何がありますか？",
-    answer: <>クレジットカード決済、銀行振込、コンビニ決済、PayPal決済に対応しております。</>,
+    answer: <>クレジットカード決済、銀行振込、PayPal決済に対応しております。</>,
     inTopPage: false,
   },
 ];

@@ -17,6 +17,9 @@ export default function Header() {
             <Link href="/#point">選ばれる理由</Link>
           </li>
           <li>
+            <Link href="/#demo">デモサイト</Link>
+          </li>
+          <li>
             <Link href="/plan">料金プラン</Link>
           </li>
           <li>

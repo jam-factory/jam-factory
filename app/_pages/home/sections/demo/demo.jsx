@@ -5,7 +5,7 @@ import { RiExternalLinkLine } from "react-icons/ri";
 
 export default function Demo() {
   return (
-    <section className={styles.demo}>
+    <section className={styles.demo} id="demo">
       <Container>
         <span className={styles.en}>DEMO</span>
         <h2>デモサイト</h2>
