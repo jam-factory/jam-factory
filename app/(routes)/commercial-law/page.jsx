@@ -1,6 +1,14 @@
 import SubMv from "@/app/_components/common/sub-mv/sub-mv";
 import Container from "@/app/_components/common/container/container";
 import styles from "./commercial-law-page.module.scss";
+import { outputMetadata } from "@/app/_utils/outputMetadata";
+import { COMMERCIAL_METADATA } from "@/app/_data/metadata";
+
+export const metadata = outputMetadata(
+  COMMERCIAL_METADATA.title,
+  COMMERCIAL_METADATA.description,
+  COMMERCIAL_METADATA.slug
+);
 
 export default function CommercialLawPage() {
   return (

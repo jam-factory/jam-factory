@@ -2,6 +2,10 @@ import SubMv from "@/app/_components/common/sub-mv/sub-mv";
 import styles from "./privacy-policy-page.module.scss";
 import Container from "@/app/_components/common/container/container";
 import UserContent from "@/app/_components/common/user-content/user-content";
+import { outputMetadata } from "@/app/_utils/outputMetadata";
+import { PRIVACY_METADATA } from "@/app/_data/metadata";
+
+export const metadata = outputMetadata(PRIVACY_METADATA.title, PRIVACY_METADATA.description, PRIVACY_METADATA.slug);
 
 export default function PrivacyPolicyPage() {
   return (
