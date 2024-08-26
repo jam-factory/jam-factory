@@ -81,7 +81,7 @@ export default function HamburgerMenu() {
             </Link>
           </li>
           <li className={styles.subLinkItem}>
-            <Link href="/" onClick={closeHamburgerMenu}>
+            <Link href="/commercial-law" onClick={closeHamburgerMenu}>
               特定商取引法に基づく表記
             </Link>
           </li>

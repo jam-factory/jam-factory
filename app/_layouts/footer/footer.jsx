@@ -81,7 +81,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li className={styles.subNavItem}>
-                <Link href="/" className={styles.subNavLink}>
+                <Link href="/commercial-law" className={styles.subNavLink}>
                   特定商取引法に基づく表記
                 </Link>
               </li>

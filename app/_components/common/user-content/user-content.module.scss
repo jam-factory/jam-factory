@@ -78,6 +78,34 @@
         flex-shrink: 0;
         margin-right: 0.4rem;
       }
+
+      div > *:not(:first-child) {
+        margin-top: 1.6rem;
+      }
+    }
+
+    & > li:not(:first-child) {
+      margin-top: 2.4rem;
+    }
+  }
+
+  ul[data-type="alphabet"] {
+    counter-reset: li;
+
+    li {
+      padding-left: 0;
+      display: flex;
+
+      &::before {
+        content: counter(li, lower-alpha) ".";
+        counter-increment: li;
+        position: static;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        margin-right: 0.6rem;
+        font-family: var(--font-ibm-mono);
+      }
     }
   }
 
@@ -99,11 +127,6 @@
 
     @include sp {
       margin-top: 2em;
-    }
-  }
-
-  ol {
-    li {
     }
   }
 }
