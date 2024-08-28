@@ -1,8 +1,10 @@
+"use client";
+
 import styles from "./contact-form.module.scss";
 
 export default function ContactForm() {
   return (
-    <form action="https://ssgform.com/s/OgMmt0Oelk7X" method="post" className={styles.form}>
+    <form action="https://ssgform.com/s/OgMmt0Oelk7X" method="post" className={styles.form} onSubmit={() => onSubmit}>
       <div className={styles.inner}>
         <p className={styles.info}>
           <span>*</span>は必須項目です。

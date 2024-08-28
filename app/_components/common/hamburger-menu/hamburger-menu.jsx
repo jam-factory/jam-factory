@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useContext } from "react";
 import { HamburgerMenuContext } from "@/app/_context/hamburger-menu-context";
 import { IoArrowForward } from "react-icons/io5";
+import { LuExternalLink } from "react-icons/lu";
+
 import Btn from "@/app/_components/common/btn/btn";
 import { LINE_URL_HAMBURGER_MENU } from "@/app/_data/url";
 
@@ -37,6 +39,42 @@ export default function HamburgerMenu() {
             <Link href="/#demo" onClick={closeHamburgerMenu}>
               <span>デモサイト</span>
               <IoArrowForward />
+            </Link>
+          </li>
+          <li>
+            <Link
+              className={styles.childLink}
+              href="https://demo-01.jam-factory.tech"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeHamburgerMenu}
+            >
+              <span>Minimalプラン デモサイト</span>
+              <LuExternalLink />
+            </Link>
+          </li>
+          <li>
+            <Link
+              className={styles.childLink}
+              href="https://demo-02.jam-factory.tech"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeHamburgerMenu}
+            >
+              <span>Basicプラン デモサイト</span>
+              <LuExternalLink />
+            </Link>
+          </li>
+          <li>
+            <Link
+              className={styles.childLink}
+              href="https://demo-03.jam-factory.tech"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeHamburgerMenu}
+            >
+              <span>CMSプラン デモサイト</span>
+              <LuExternalLink />
             </Link>
           </li>
           <li>

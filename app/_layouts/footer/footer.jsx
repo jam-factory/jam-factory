@@ -1,6 +1,7 @@
 import Container from "@/app/_components/common/container/container";
 import Link from "next/link";
 import { IoArrowForward } from "react-icons/io5";
+import { LuExternalLink } from "react-icons/lu";
 
 import styles from "./footer.module.scss";
 import IconLine from "@/app/_components/icons/icon-line";
@@ -35,6 +36,41 @@ export default function Footer() {
                 <Link className={styles.navLink} href="/#demo">
                   デモサイト
                 </Link>
+                <ul className={styles.navSubList}>
+                  <li className={styles.navSubItem}>
+                    <a
+                      className={styles.navSubLink}
+                      href="https://demo-01.jam-factory.tech"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Minimalプラン
+                      <LuExternalLink />
+                    </a>
+                  </li>
+                  <li className={styles.navSubItem}>
+                    <a
+                      className={styles.navSubLink}
+                      href="https://demo-02.jam-factory.tech"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Basicプラン
+                      <LuExternalLink />
+                    </a>
+                  </li>
+                  <li className={styles.navSubItem}>
+                    <a
+                      className={styles.navSubLink}
+                      href="https://demo-03.jam-factory.tech"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      CMSプラン
+                      <LuExternalLink />
+                    </a>
+                  </li>
+                </ul>
               </li>
               <li className={styles.navCol}>
                 <Link className={styles.navLink} href="/plan">
