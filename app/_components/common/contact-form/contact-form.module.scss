@@ -143,3 +143,14 @@
     }
   }
 }
+
+.errorMessage {
+  color: $c-error;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-top: 0.8rem;
+
+  @include sp {
+    font-size: 1.2rem;
+  }
+}
