@@ -1,11 +1,46 @@
+"use client";
+
 import Container from "@/app/_components/common/container/container";
 import styles from "./demo.module.scss";
 import Image from "next/image";
 import { RiExternalLinkLine } from "react-icons/ri";
+import { useEffect, useContext, useRef } from "react";
+import { HeaderContext } from "@/app/_context/header-context";
 
 export default function Demo() {
+  const { setHeaderIsWhite } = useContext(HeaderContext);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observerCallback = ([entry]) => {
+      setHeaderIsWhite(entry.isIntersecting);
+    };
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px 0px -100%",
+      threshold: 0,
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    const observeElement = () => {
+      if (sectionRef.current) {
+        observer.observe(sectionRef.current);
+      }
+    };
+
+    requestAnimationFrame(observeElement); // DOMがレンダリングされた後にオブザーバーを設定
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className={styles.demo} id="demo">
+    <section className={styles.demo} id="demo" ref={sectionRef}>
       <Container>
         <span className={styles.en}>DEMO</span>
         <h2>デモサイト</h2>

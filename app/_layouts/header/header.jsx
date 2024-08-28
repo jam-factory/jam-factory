@@ -1,14 +1,26 @@
+"use client";
+
 import Link from "next/link";
 import styles from "./header.module.scss";
 import { LINE_URL_HEADER } from "@/app/_data/url";
 import HamburgerBtn from "@/app/_components/common/hamburger-btn/hamburger-btn";
+import { HeaderContext } from "@/app/_context/header-context";
+import { HamburgerMenuContext } from "@/app/_context/hamburger-menu-context";
+import { useContext } from "react";
 import logo from "/public/images/common/logo.svg";
+import logoWhite from "/public/images/common/logo-white.svg";
 import Image from "next/image";
 
 export default function Header() {
+  const { headerIsWhite } = useContext(HeaderContext);
+  const { hamburgerMenuIsOpen } = useContext(HamburgerMenuContext);
+
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${headerIsWhite && styles.isWhite} ${hamburgerMenuIsOpen && styles.isHamburgerOpen}`}
+    >
       <Link href="/" className={styles.logo}>
+        <Image src={logoWhite} alt="ジャムファクトリー" />
         <Image src={logo} alt="ジャムファクトリー" />
       </Link>
       <nav className={styles.nav}>

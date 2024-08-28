@@ -6,6 +6,7 @@ import Footer from "./_layouts/footer/footer";
 import { HamburgerMenuContextProvider } from "./_context/hamburger-menu-context";
 import Wrapper from "./_layouts/wrapper/wrapper";
 import HamburgerMenu from "./_components/common/hamburger-menu/hamburger-menu";
+import { HeaderContextProvider } from "./_context/header-context";
 // import { ReCaptchaProvider } from "next-recaptcha-v3";
 
 const notoSansJp = Noto_Sans_JP({
@@ -41,12 +42,14 @@ export default function RootLayout({ children }) {
     <html lang="ja">
       <body className={`${notoSansJp.variable} ${figtree.variable} ${ibm.variable} ${ibmMono.variable}`}>
         <HamburgerMenuContextProvider>
-          <Wrapper>
-            <Header />
-            <HamburgerMenu />
-            {children}
-            <Footer />
-          </Wrapper>
+          <HeaderContextProvider>
+            <Wrapper>
+              <Header />
+              <HamburgerMenu />
+              {children}
+              <Footer />
+            </Wrapper>
+          </HeaderContextProvider>
         </HamburgerMenuContextProvider>
       </body>
     </html>

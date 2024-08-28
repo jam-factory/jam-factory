@@ -5,17 +5,12 @@
   top: 0;
   left: 0;
   width: 100%;
-  // background-color: rgba($c-white, 0.2);
-  // backdrop-filter: blur(1rem);
-  // background-color: $c-white;
   z-index: 100;
   padding: 2rem 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   pointer-events: none;
-  // border-bottom: 1px solid #eee;
-  // box-shadow: 0 0.4rem 0.6rem 0.3rem rgba($c-dark, 0.02);
   z-index: $z-header;
 
   @include hamburger {
@@ -25,10 +20,48 @@
   @include sp {
     padding: 1.2rem 2rem;
   }
+
+  &.isWhite {
+    .nav {
+      .list {
+        a {
+          color: $c-white;
+        }
+      }
+    }
+
+    .logo {
+      img {
+        &:nth-child(1) {
+          opacity: 1;
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &.isHamburgerOpen {
+    .logo {
+      img {
+        &:nth-child(1) {
+          opacity: 0;
+        }
+
+        &:nth-child(2) {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 
 .logo {
+  position: relative;
   width: 19rem;
+  height: 4rem;
   transition: opacity 0.3s;
   display: flex;
   flex-direction: column;
@@ -39,20 +72,18 @@
     margin-top: 0.8rem;
   }
 
-  span {
-    letter-spacing: 0;
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: opacity 0.3s;
 
-    span {
-      background-image: linear-gradient(to right top, #1454dd, #00c3ee);
-      color: transparent;
-      -webkit-background-clip: text;
+    &:nth-child(1) {
+      opacity: 0;
     }
 
     &:nth-child(2) {
-      font-family: var(--font-ibm);
-      font-size: 1rem;
-      font-weight: bold;
-      margin-top: -0.6rem;
+      opacity: 1;
     }
   }
 
