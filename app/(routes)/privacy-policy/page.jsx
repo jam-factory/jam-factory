@@ -4,6 +4,7 @@ import Container from "@/app/_components/common/container/container";
 import UserContent from "@/app/_components/common/user-content/user-content";
 import { outputMetadata } from "@/app/_utils/outputMetadata";
 import { PRIVACY_METADATA } from "@/app/_data/metadata";
+import { MAIL_ADDRESS } from "@/app/_data/data";
 
 export const metadata = outputMetadata(PRIVACY_METADATA.title, PRIVACY_METADATA.description, PRIVACY_METADATA.slug);
 
@@ -202,7 +203,7 @@ export default function PrivacyPolicyPage() {
                 <p>
                   当方は、個人情報の取扱いに関する担当窓口及び責任者を以下の通り設けます。
                   <br />
-                  メールアドレス：jam.factory.subscription@gmail.com
+                  メールアドレス：{MAIL_ADDRESS}
                   <br />
                   個人情報苦情・相談窓口責任者 赤尾 起弥
                 </p>

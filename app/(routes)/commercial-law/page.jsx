@@ -3,6 +3,7 @@ import Container from "@/app/_components/common/container/container";
 import styles from "./commercial-law-page.module.scss";
 import { outputMetadata } from "@/app/_utils/outputMetadata";
 import { COMMERCIAL_METADATA } from "@/app/_data/metadata";
+import { MAIL_ADDRESS } from "@/app/_data/data";
 
 export const metadata = outputMetadata(
   COMMERCIAL_METADATA.title,
@@ -52,7 +53,7 @@ export default function CommercialLawPage() {
                 </div>
                 <div className={styles.item}>
                   <dt>メールアドレス</dt>
-                  <dd>jam.factory.subscription@gmail.com</dd>
+                  <dd>{MAIL_ADDRESS}</dd>
                 </div>
                 <div className={styles.item}>
                   <dt>ホームページURL</dt>
