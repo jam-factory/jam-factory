@@ -134,7 +134,7 @@ export default function Demo() {
           <li className={styles.item}>
             <span className={styles.link}>
               <a
-                href="https://demo-02.jam-factory.tech"
+                href="https://demo-03.jam-factory.tech"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.thumbWrap}

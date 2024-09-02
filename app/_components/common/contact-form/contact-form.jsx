@@ -48,7 +48,7 @@ export default function ContactForm() {
 
   const send = (data) => {
     axios
-      .post("https://ssgform.com/s/OgMmt0Oelk7X", data, {
+      .post("https://ssgform.com/s/zTmUVTZojUhe", data, {
         headers: {
           "content-type": "multipart/form-data", //axiosでフォーム送信する時に必要なheader情報
           "X-Requested-With": "XMLHttpRequest", //これが無いと400レスポンスが返却される
