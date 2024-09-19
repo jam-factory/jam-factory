@@ -41,7 +41,7 @@ export default function CommercialLawPage() {
                   <dd>
                     〒530-0001
                     <br />
-                    大阪府大阪市北区梅田1-1-3大阪駅前第3ビル 29階　1-1-1号室
+                    大阪府大阪市北区梅田1-1-3大阪駅前第3ビル 29階 1-1-1号室
                   </dd>
                 </div>
                 <div className={styles.item}>
