@@ -9,6 +9,7 @@ import HamburgerMenu from "./_components/common/hamburger-menu/hamburger-menu";
 import { HeaderContextProvider } from "./_context/header-context";
 // import { ReCaptchaProvider } from "next-recaptcha-v3";
 import GoogleAnalytics from "./_utils/google-analytics";
+import { Clarity } from "./_utils/clarity";
 
 const notoSansJp = Noto_Sans_JP({
   subsets: ["latin"],
@@ -43,6 +44,7 @@ export default function RootLayout({ children }) {
     <html lang="ja">
       <head>
         <GoogleAnalytics />
+        <Clarity />
       </head>
       <body className={`${notoSansJp.variable} ${figtree.variable} ${ibm.variable} ${ibmMono.variable}`}>
         <HamburgerMenuContextProvider>
