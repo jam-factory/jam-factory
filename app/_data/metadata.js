@@ -45,6 +45,13 @@ export const COMMERCIAL_METADATA = {
   slug: "/commercial-law",
 };
 
+export const CAMPAIGN_METADATA = {
+  title: `モニターキャンペーン`,
+  description:
+    "ジャムファクトリーのサービス開始記念として、モニターキャンペーンを実施中です。全プランを1年間50%オフでご利用いただける特典や、オプション料金3万円分まで無料など、お得な特典が盛りだくさんです。",
+  slug: "/monitor-campaign",
+};
+
 export const PRIVACY_METADATA = {
   title: `プライバシーポリシー`,
   description: "ジャムファクトリーのプライバシーポリシーに関するページです。",

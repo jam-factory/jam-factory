@@ -5,6 +5,10 @@ import Link from "next/link";
 import { LINE_URL } from "@/app/_data/url";
 import Image from "next/image";
 import Btn from "@/app/_components/common/btn/btn";
+import { outputMetadata } from "@/app/_utils/outputMetadata";
+import { CAMPAIGN_METADATA } from "@/app/_data/metadata";
+
+export const metadata = outputMetadata(CAMPAIGN_METADATA.title, CAMPAIGN_METADATA.description, CAMPAIGN_METADATA.slug);
 
 export default function MonitorCampaignPage() {
   return (
