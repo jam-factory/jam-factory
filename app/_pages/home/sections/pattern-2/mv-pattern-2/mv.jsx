@@ -4,6 +4,7 @@ import { IoArrowForward } from "react-icons/io5";
 import Btn from "@/app/_components/common/btn/btn";
 import MvImg from "@/app/_components/home/mv-img/mv-img";
 import { PLAN_DATA } from "@/app/_data/plan";
+import Image from "next/image";
 
 export default function Mv() {
   const planMinimalData = PLAN_DATA.find((plan) => plan.planId === "minimal");

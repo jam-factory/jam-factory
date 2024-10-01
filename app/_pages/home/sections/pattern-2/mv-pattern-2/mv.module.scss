@@ -72,3 +72,25 @@
     display: block;
   }
 }
+
+.campaign {
+  margin-top: 6.4rem;
+  color: $c-sub;
+  font-weight: bold;
+
+  .banner {
+    width: 56rem;
+  }
+}
+
+.campaignBox {
+  background-color: $c-white;
+  border: 0.4rem solid $c-sub;
+  // color: $c-white;
+  color: $c-sub;
+  padding: 3.2rem;
+  border-radius: 0.8rem;
+
+  .link {
+  }
+}
