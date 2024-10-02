@@ -10,6 +10,7 @@ import { HeaderContextProvider } from "./_context/header-context";
 // import { ReCaptchaProvider } from "next-recaptcha-v3";
 import GoogleAnalytics from "./_utils/google-analytics";
 import { Clarity } from "./_utils/clarity";
+import CampaignBanner from "./_components/common/campaign-banner/campaign-banner";
 
 const notoSansJp = Noto_Sans_JP({
   subsets: ["latin"],
@@ -54,6 +55,7 @@ export default function RootLayout({ children }) {
               <HamburgerMenu />
               {children}
               <Footer />
+              <CampaignBanner />
             </Wrapper>
           </HeaderContextProvider>
         </HamburgerMenuContextProvider>

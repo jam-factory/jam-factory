@@ -6,20 +6,9 @@
   left: 0;
   width: 100%;
   z-index: 100;
-  padding: 2rem 4rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  pointer-events: none;
+  flex-direction: column;
   z-index: $z-header;
-
-  @include hamburger {
-    padding: 2rem 2.4rem;
-  }
-
-  @include sp {
-    padding: 1.2rem 2rem;
-  }
 
   &.isWhite {
     .nav {
@@ -55,6 +44,23 @@
         }
       }
     }
+  }
+}
+
+.headerInner {
+  width: 100%;
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+
+  @include hamburger {
+    padding: 2rem 2.4rem;
+  }
+
+  @include sp {
+    padding: 1.2rem 2rem;
   }
 }
 

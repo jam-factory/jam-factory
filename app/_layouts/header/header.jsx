@@ -19,36 +19,38 @@ export default function Header() {
     <header
       className={`${styles.header} ${headerIsWhite && styles.isWhite} ${hamburgerMenuIsOpen && styles.isHamburgerOpen}`}
     >
-      <Link href="/" className={styles.logo}>
-        <Image src={logoWhite} alt="ジャムファクトリー" />
-        <Image src={logo} alt="ジャムファクトリー" />
-      </Link>
-      <nav className={styles.nav}>
-        <ul className={styles.list}>
-          <li>
-            <Link href="/#point">選ばれる理由</Link>
-          </li>
-          <li>
-            <Link href="/#demo">デモサイト</Link>
-          </li>
-          <li>
-            <Link href="/plan">料金プラン</Link>
-          </li>
-          <li>
-            <Link href="/#flow">制作の流れ</Link>
-          </li>
-          <li>
-            <Link href="/faq">よくあるご質問</Link>
-          </li>
-        </ul>
-        <Link href="/contact" className={styles.btn}>
-          お問い合わせ
+      <div className={styles.headerInner}>
+        <Link href="/" className={styles.logo}>
+          <Image src={logoWhite} alt="ジャムファクトリー" />
+          <Image src={logo} alt="ジャムファクトリー" />
         </Link>
-        <Link href={LINE_URL_HEADER} target="_blank" className={`${styles.btn} ${styles.isDarker}`}>
-          LINEで相談
-        </Link>
-      </nav>
-      <HamburgerBtn />
+        <nav className={styles.nav}>
+          <ul className={styles.list}>
+            <li>
+              <Link href="/#point">選ばれる理由</Link>
+            </li>
+            <li>
+              <Link href="/#demo">デモサイト</Link>
+            </li>
+            <li>
+              <Link href="/plan">料金プラン</Link>
+            </li>
+            <li>
+              <Link href="/#flow">制作の流れ</Link>
+            </li>
+            <li>
+              <Link href="/faq">よくあるご質問</Link>
+            </li>
+          </ul>
+          <Link href="/contact" className={styles.btn}>
+            お問い合わせ
+          </Link>
+          <Link href={LINE_URL_HEADER} target="_blank" className={`${styles.btn} ${styles.isDarker}`}>
+            LINEで相談
+          </Link>
+        </nav>
+        <HamburgerBtn />
+      </div>
     </header>
   );
 }
