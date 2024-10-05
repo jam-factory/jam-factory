@@ -128,6 +128,12 @@ export default function Footer() {
               </li>
             </ul>
           </nav>
+
+          <div className={styles.bannerWrap}>
+            <Link className={styles.banner} href="/monitor-campaign">
+              <Image src="/images/common/banner-sp.svg" width={360} height={148} alt="モニターキャンペーン実施中！" />
+            </Link>
+          </div>
         </div>
 
         <p className={styles.copy}>&copy; Jam Factory All Rights Reserved.</p>

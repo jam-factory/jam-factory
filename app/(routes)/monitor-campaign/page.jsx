@@ -103,7 +103,9 @@ export default function MonitorCampaignPage() {
                   <dd>
                     1年間
                     <br />
-                    ※2年目以降は、通常通りの価格となります。
+                    ※2年目以降は、通常通りのプラン料金となります。
+                    <br />
+                    ※オプション料金の無料枠は、初年度のみ適用されます。
                   </dd>
                 </div>
                 <div>

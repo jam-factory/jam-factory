@@ -22,6 +22,7 @@
 }
 
 .row {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -261,6 +262,29 @@
   @include hover {
     &:hover {
       opacity: 0.7;
+    }
+  }
+}
+
+.bannerWrap {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 32rem;
+
+  @include sp {
+    width: 100%;
+    position: static;
+    margin-top: 3.2rem;
+  }
+
+  .banner {
+    transition: all 0.3s;
+
+    @include hover {
+      &:hover {
+        opacity: 0.8;
+      }
     }
   }
 }

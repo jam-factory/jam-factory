@@ -19,9 +19,7 @@ export default function Plan() {
           <div className={styles.toggleCol}>
             <button
               onClick={() => setActiveTab("monthly")}
-              className={`${styles.toggleBtn} ${
-                activeTab === "monthly" && styles.isActive
-              }`}
+              className={`${styles.toggleBtn} ${activeTab === "monthly" && styles.isActive}`}
             >
               月間契約
             </button>
@@ -30,9 +28,7 @@ export default function Plan() {
             <p className={styles.toggleSale}>1ヶ月分お得!</p>
             <button
               onClick={() => setActiveTab("yearly")}
-              className={`${styles.toggleBtn} ${
-                activeTab === "yearly" && styles.isActive
-              }`}
+              className={`${styles.toggleBtn} ${activeTab === "yearly" && styles.isActive}`}
             >
               年間契約
             </button>
@@ -158,12 +154,8 @@ export default function Plan() {
           <div className={styles.table}>
             <div className={`${styles.tableRow} ${styles.isHead}`}>
               <div className={`${styles.tableCol} ${styles.isBlank}`}></div>
-              <div className={`${styles.tableCol} ${styles.isSimple}`}>
-                シンプル
-              </div>
-              <div className={`${styles.tableCol} ${styles.isStandard}`}>
-                スタンダード
-              </div>
+              <div className={`${styles.tableCol} ${styles.isSimple}`}>シンプル</div>
+              <div className={`${styles.tableCol} ${styles.isStandard}`}>スタンダード</div>
             </div>
 
             <div className={styles.tableRow}>

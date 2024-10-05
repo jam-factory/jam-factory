@@ -12,27 +12,57 @@ export default function Simulator() {
   const [options, setOptions] = useState(PLAN_OPTION_DATA);
   const [checkedOptions, setCheckedOptions] = useState([]);
 
+  const [optionsCost, setOptionsCost] = useState(0);
+  const [optionsCampaignCost, setOptionsCampaignCost] = useState(0);
+
   const [initialCost, setInitialCost] = useState(
     PLAN_DATA.find((plan) => plan.planId === activePlan).monthlyPrice.toLocaleString()
   );
 
   useEffect(() => {
-    const optionsCost = checkedOptions.reduce((acc, option) => {
-      if (option.availablePlans.includes(activePlan)) {
-        return acc + option.price.priceNum * option.quantity;
+    if (paymentOption === "monthly") {
+      const optionsCost = checkedOptions.reduce((acc, option) => {
+        if (option.availablePlans.includes(activePlan)) {
+          return acc + option.price.priceNum * option.quantity;
+        }
+        return acc;
+      }, 0);
+
+      setOptionsCost(optionsCost);
+    }
+    // モニターキャンペーン値引き
+    else if (paymentOption === "yearly") {
+      let optionsCost = checkedOptions.reduce((acc, option) => {
+        if (option.availablePlans.includes(activePlan)) {
+          return acc + option.price.priceNum * option.quantity;
+        }
+        return acc;
+      }, 0);
+
+      let deductedOptionsCost = optionsCost - 30000;
+
+      if (deductedOptionsCost < 0) {
+        deductedOptionsCost = 0;
       }
-      return acc;
-    }, 0);
+
+      let optionsDeductAmount = optionsCost * -1;
+      optionsDeductAmount < -30000 ? (optionsDeductAmount = -30000) : optionsDeductAmount;
+
+      setOptionsCost(deductedOptionsCost);
+      setOptionsCampaignCost(optionsDeductAmount);
+    }
+
+    console.log(optionsCost);
 
     const planCost =
       paymentOption === "monthly"
         ? PLAN_DATA.find((plan) => plan.planId === activePlan).monthlyPrice
-        : PLAN_DATA.find((plan) => plan.planId === activePlan).yearlyPrice;
+        : PLAN_DATA.find((plan) => plan.planId === activePlan).yearlyCampaignPrice;
 
     const totalCost = optionsCost + planCost;
 
     setInitialCost(totalCost.toLocaleString());
-  }, [activePlan, paymentOption, checkedOptions]);
+  }, [activePlan, paymentOption, checkedOptions, optionsCost]);
 
   const handleCheck = (id) => {
     // もしすでにチェックされているオプションなら、チェックを外す
@@ -124,7 +154,7 @@ export default function Simulator() {
         <div className={styles.paymentGroup}>
           <p className={styles.title}>STEP 2. お支払い方法を選択</p>
           <div className={`${styles.paymentWrap} ${paymentOption === "monthly" ? styles.isMonthly : styles.isYearly}`}>
-            <span className={styles.paymentDiscount}>＼1ヶ月分お得!／</span>
+            <span className={styles.paymentDiscount}>＼キャンペーン中!／</span>
             <button
               className={`${styles.paymentBtn} ${paymentOption === "monthly" && styles.isActive}`}
               onClick={() => setpaymentOption("monthly")}
@@ -194,13 +224,13 @@ export default function Simulator() {
 
             <div className={styles.resultPlanRow}>
               <div className={`${styles.resultPlanCol} ${activePlan === "cms" && styles.isCms}`}>
-                {activePlan}プラン{paymentOption === "yearly" ? "（年払い）" : "（月払い）"}
+                {activePlan}プラン{paymentOption === "yearly" ? "（年払い / モニターキャンペーン）" : "（月払い）"}
               </div>
               <div className={styles.resultPlanCol}>1</div>
               <div className={styles.resultPlanCol}>
                 {paymentOption === "monthly"
                   ? PLAN_DATA.find((plan) => plan.planId === activePlan).monthlyPrice.toLocaleString()
-                  : PLAN_DATA.find((plan) => plan.planId === activePlan).yearlyPrice.toLocaleString()}
+                  : PLAN_DATA.find((plan) => plan.planId === activePlan).yearlyCampaignPrice.toLocaleString()}
                 円
               </div>
             </div>
@@ -258,6 +288,15 @@ export default function Simulator() {
                 </div>
               );
             })}
+
+            {/* オプション3万円無料枠 */}
+            {paymentOption === "yearly" && (
+              <div className={styles.resultItem}>
+                <div className={styles.resultCol}>オプション料金3万円無料（モニターキャンペーン）</div>
+                <div className={styles.resultCol}>1</div>
+                <div className={styles.resultCol}>{optionsCampaignCost}円</div>
+              </div>
+            )}
 
             {/* {checkedOptions.length === 0 && <li>なし</li>} */}
           </div>

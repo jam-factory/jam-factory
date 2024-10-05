@@ -180,12 +180,49 @@
       font-weight: bold;
       font-size: 4rem;
       margin: 0 0.4rem;
+
+      &.priceNum {
+        position: relative;
+
+        &::before,
+        &::after {
+          content: "";
+          width: 100%;
+          height: 0.2rem;
+          background-color: $c-text;
+          position: absolute;
+          top: 1.3rem;
+          left: 0;
+        }
+
+        &::after {
+          top: auto;
+          bottom: 1.3rem;
+        }
+      }
+
+      &.campaignNum {
+      }
     }
 
     small {
       font-size: 1.4rem;
       margin-left: 0.4rem;
     }
+  }
+
+  .normalPrice {
+    font-size: 1.8rem;
+
+    span {
+      font-size: 3.2rem;
+    }
+  }
+
+  .campaignNum {
+    color: $c-sub;
+    color: #1058e2;
+    color: $c-main;
   }
 
   ul {

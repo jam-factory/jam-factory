@@ -4,6 +4,7 @@ import Link from "next/link";
 import { IoArrowForward } from "react-icons/io5";
 import PlanOverview from "@/app/_components/plan/plan-overview/plan-overview";
 import Btn from "@/app/_components/common/btn/btn";
+import Image from "next/image";
 
 export default function Plan() {
   return (

@@ -6,7 +6,7 @@ import { PLAN_DATA } from "@/app/_data/plan";
 import styles from "./plan-overview.module.scss";
 
 export default function PlanOverview() {
-  const [activeTab, setActiveTab] = useState("monthly");
+  const [activeTab, setActiveTab] = useState("yearly");
 
   const planMinimalData = PLAN_DATA.find((plan) => plan.planId === "minimal");
   const planBasicData = PLAN_DATA.find((plan) => plan.planId === "basic");
@@ -25,7 +25,10 @@ export default function PlanOverview() {
             </button>
           </div>
           <div className={styles.toggleCol}>
-            <span className={styles.toggleColDiscount}>＼1ヶ月分お得／</span>
+            <span className={styles.toggleColDiscount}>
+              {/* ＼1ヶ月分お得／ */}
+              ＼キャンペーン実施中！／
+            </span>
             <button
               onClick={() => setActiveTab("yearly")}
               className={`${styles.toggleBtn} ${activeTab === "yearly" && styles.isActive}`}
@@ -44,19 +47,25 @@ export default function PlanOverview() {
             <br />
             ミニマルなサイト
           </p>
-          <p className={styles.price}>
-            ¥
+          <div className={styles.price}>
             {activeTab === "yearly" ? (
               <>
-                <span>{planMinimalData.yearlyPrice.toLocaleString()}</span>/年
+                <div className={styles.normalPrice}>
+                  ¥<span className={styles.priceNum}>{planMinimalData.yearlyPrice.toLocaleString()}</span>/年
+                  <small>(税込)</small>
+                </div>
+                <div className={styles.campaignPrice}>
+                  ¥<span className={styles.campaignNum}>{(planMinimalData.yearlyPrice / 2).toLocaleString()}</span>/年
+                  <small>(税込)</small>
+                </div>
               </>
             ) : (
               <>
-                <span>{planMinimalData.monthlyPrice.toLocaleString()}</span>/月
+                ¥<span>{planMinimalData.monthlyPrice.toLocaleString()}</span>/月
+                <small>(税込)</small>
               </>
             )}
-            <small>(税込)</small>
-          </p>
+          </div>
           <ul>
             <li>
               <FaCheck />
@@ -107,19 +116,24 @@ export default function PlanOverview() {
             <br />
             ベーシックなサイト
           </p>
-          <p className={styles.price}>
-            ¥
+          <div className={styles.price}>
             {activeTab === "yearly" ? (
               <>
-                <span>{planBasicData.yearlyPrice.toLocaleString()}</span>/年
+                <div className={styles.normalPrice}>
+                  ¥<span className={styles.priceNum}>{planBasicData.yearlyPrice.toLocaleString()}</span>/年
+                  <small>(税込)</small>
+                </div>
+                <div className={styles.campaignPrice}>
+                  ¥<span className={styles.campaignNum}>{(planBasicData.yearlyPrice / 2).toLocaleString()}</span>/年
+                  <small>(税込)</small>
+                </div>
               </>
             ) : (
               <>
-                <span>{planBasicData.monthlyPrice.toLocaleString()}</span>/月
+                ¥<span>{planBasicData.monthlyPrice.toLocaleString()}</span>/月<small>(税込)</small>
               </>
             )}
-            <small>(税込)</small>
-          </p>
+          </div>
           <ul>
             <li>
               <FaCheck />
@@ -173,19 +187,24 @@ export default function PlanOverview() {
             <br />
             本格的なサイト
           </p>
-          <p className={styles.price}>
-            ¥
+          <div className={styles.price}>
             {activeTab === "yearly" ? (
               <>
-                <span>{planCmsData.yearlyPrice.toLocaleString()}</span>/年
+                <div className={styles.normalPrice}>
+                  ¥<span className={styles.priceNum}>{planCmsData.yearlyPrice.toLocaleString()}</span>/年
+                  <small>(税込)</small>
+                </div>
+                <div className={styles.campaignPrice}>
+                  ¥<span className={styles.campaignNum}>{(planCmsData.yearlyPrice / 2).toLocaleString()}</span>/年
+                  <small>(税込)</small>
+                </div>
               </>
             ) : (
               <>
-                <span>{planCmsData.monthlyPrice.toLocaleString()}</span>/月
+                ¥<span>{planCmsData.monthlyPrice.toLocaleString()}</span>/月<small>(税込)</small>
               </>
             )}
-            <small>(税込)</small>
-          </p>
+          </div>
           <ul>
             <li>
               <FaCheck />

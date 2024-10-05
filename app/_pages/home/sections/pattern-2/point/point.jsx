@@ -7,6 +7,7 @@ import iconPointJamstack from "/public/images/common/icon-point-jamstack.svg";
 import iconPointTask from "/public/images/common/icon-point-task.svg";
 import styles from "./point.module.scss";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Point() {
   return (
@@ -84,6 +85,12 @@ export default function Point() {
               </p>
             </div>
           </div>
+        </div>
+
+        <div className={styles.bannerWrap}>
+          <Link className={styles.banner} href="/monitor-campaign">
+            <Image src="/images/common/banner-sp.svg" width={360} height={148} alt="モニターキャンペーン実施中！" />
+          </Link>
         </div>
       </Container>
     </section>

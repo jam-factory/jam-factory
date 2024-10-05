@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useContext } from "react";
 import { HamburgerMenuContext } from "@/app/_context/hamburger-menu-context";
 import { IoArrowForward } from "react-icons/io5";
@@ -130,6 +131,12 @@ export default function HamburgerMenu() {
             </Link>
           </li>
         </ul>
+
+        <div className={styles.bannerWrap}>
+          <Link className={styles.banner} href="/monitor-campaign">
+            <Image src="/images/common/banner-sp.svg" width={360} height={148} alt="モニターキャンペーン実施中！" />
+          </Link>
+        </div>
       </div>
     </nav>
   );
