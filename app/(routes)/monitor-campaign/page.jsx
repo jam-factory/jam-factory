@@ -121,18 +121,35 @@ export default function MonitorCampaignPage() {
               </dl>
             </div>
 
-            <p className={styles.count}>残り定員数：5名</p>
-
-            <div className={styles.btns}>
-              <div className={styles.btn}>
-                <Btn href="/contact" icon="arrow">
-                  フォームで応募する
-                </Btn>
+            <div className={styles.messageBox}>
+              <div className={styles.message}>
+                <p className={styles.messageText}>
+                  <span>
+                    まずはお気軽に
+                    <br />
+                    ご相談ください！
+                  </span>
+                </p>
+                <p className={styles.messagePara}>
+                  ホームページについて何も知らない、まずは話を聞いてみたいという場合でも
+                  <br />
+                  相談を受け付けておりますので、お気軽にご連絡ください。
+                </p>
               </div>
-              <div className={styles.btn}>
-                <Btn href={LINE_URL} theme="secondary" icon="line" isExternal>
-                  LINEで応募する
-                </Btn>
+
+              <p className={styles.count}>残り定員数：5名</p>
+
+              <div className={styles.btns}>
+                <div className={styles.btn}>
+                  <Btn href="/contact" icon="arrow">
+                    フォームで相談する
+                  </Btn>
+                </div>
+                <div className={styles.btn}>
+                  <Btn href={LINE_URL} theme="secondary" icon="line" isExternal>
+                    LINEで相談する
+                  </Btn>
+                </div>
               </div>
             </div>
           </section>
