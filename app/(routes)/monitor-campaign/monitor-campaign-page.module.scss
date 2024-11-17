@@ -12,10 +12,10 @@
 }
 
 .intro {
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 12rem;
   line-height: 2.25;
+  max-width: 100rem;
+  width: 100%;
+  margin: 0 auto 12rem;
 }
 
 .secTitle {
@@ -159,6 +159,17 @@
   a {
     color: $c-main;
     text-decoration: underline;
+  }
+}
+
+.planPriceText {
+  span {
+    font-weight: bold;
+
+    span {
+      font-size: 1.2em;
+      color: $c-main;
+    }
   }
 }
 

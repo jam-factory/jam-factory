@@ -22,6 +22,11 @@ export default function MonitorCampaignPage() {
 
       <div className={styles.body}>
         <Container>
+          <p className={styles.intro}>
+            ジャムファクトリーは、初期費用ゼロ・制作費ゼロ・ドメイン代負担なし、定額料金（月5,980円〜 or
+            年65,780円〜）のみでホームページを開設・運用できるサブスクリプション型のサービスです。デザインや公開後の更新作業など、専門的な知識がなくても、低価格で手軽に高品質なホームページを持つことができ、個人事業主や中小企業のホームページ開設に最適です。この度、サービス開始につき、モニターキャンペーンを実施します！
+          </p>
+
           <section className={styles.overview}>
             <h2 className={styles.secTitle} data-en="CAMPAIGN BENEFITS">
               キャンペーン特典
@@ -37,8 +42,31 @@ export default function MonitorCampaignPage() {
                 <div className={styles.benefitText}>
                   <p>
                     年払い（1年契約）のモニター様限定！初年度は、各プランを<strong>通常料金の50%オフ</strong>
-                    でご利用いただけます。各プランの詳しい内容や料金については、<Link href="/plan">料金プラン</Link>
-                    ページからご確認ください。
+                    でご利用いただけます。
+                  </p>
+                  <p className={styles.planPriceText}>
+                    ■Minimalプラン: 1ページだけ、名刺代わりのシンプルなホームページを持ちたい
+                    <br />
+                    <del>¥65,780/年(税込)</del> →{" "}
+                    <span>
+                      ¥<span>32,890</span>/年(税込)
+                    </span>
+                  </p>
+                  <p className={styles.planPriceText}>
+                    ■Basicプラン: 複数ページある、充実したホームページを持ちたい
+                    <br />
+                    <del>¥98,780/年(税込)</del> →{" "}
+                    <span>
+                      ¥<span>49,390</span>/年(税込)
+                    </span>
+                  </p>
+                  <p className={styles.planPriceText}>
+                    ■CMSプラン: 更新機能付きの本格的なサイトを持ちたい
+                    <br />
+                    <del>¥142,780/年(税込)</del> →{" "}
+                    <span>
+                      ¥<span>71,390</span>/年(税込)
+                    </span>
                   </p>
                 </div>
               </div>
@@ -52,9 +80,11 @@ export default function MonitorCampaignPage() {
                 <span className={styles.benefitNum}>BENEFIT 02.</span>
                 <h3>オプション料金は3万円まで無料！</h3>
                 <div className={styles.benefitText}>
-                  各プランをご利用いただくお客様には、<strong>オプションサービスを最大3万円分まで無料</strong>
-                  でご提供いたします。追加の費用を気にせず、より充実したサービスを体験できる大変お得なチャンスです。詳しいオプション内容については、
-                  <Link href="/plan#option">料金プランの追加オプション</Link>をご確認ください。
+                  各プランをご利用いただくお客様には、
+                  <strong>
+                    SNS連携やお問い合わせフォームの追加、アニメーション等のオプションサービスを最大3万円分まで無料
+                  </strong>
+                  でご提供いたします。追加の費用を気にせず、より充実したサービスを体験できる大変お得なチャンスです。
                 </div>
               </div>
             </div>
