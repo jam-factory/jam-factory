@@ -173,10 +173,12 @@ export default function MonitorCampaignPage() {
                   <br />
                   相談を受け付けておりますので、お気軽にご連絡ください。
                   <br />
-                  <a href={LINE_URL} target="_blank" className={styles.link}>
-                    <span>LINEでのご相談はこちら</span>
-                    <LuExternalLink />
-                  </a>
+                  <span className={styles.messageLineLink}>
+                    <a href={LINE_URL} target="_blank" className={styles.link}>
+                      <span>LINEでのご相談はこちら</span>
+                      <LuExternalLink />
+                    </a>
+                  </span>
                 </p>
               </div>
 

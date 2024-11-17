@@ -179,12 +179,11 @@ export default function ContactForm() {
             </div>
             <p className={styles.errorMessage}>{errors.お問い合わせ詳細?.message}</p>
           </div>
-
-          <div className={`${styles.row} ${styles.isBtn}`}>
-            <button type="submit" className={styles.submitBtn} onClick={handleReCaptchaVerify}>
-              送信する
-            </button>
-          </div>
+        </div>
+        <div className={styles.btnWrap}>
+          <button type="submit" className={styles.submitBtn} onClick={handleReCaptchaVerify}>
+            送信する
+          </button>
         </div>
       </form>
     </GoogleReCaptchaProvider>

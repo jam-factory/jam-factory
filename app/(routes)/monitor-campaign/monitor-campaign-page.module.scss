@@ -4,11 +4,11 @@
 }
 
 .body {
-  padding: 12rem 0;
+  padding: 8rem 0 12rem;
   font-weight: 500;
 
   @include sp {
-    padding: 8rem 0;
+    padding: 4rem 0 8rem;
   }
 }
 
@@ -286,6 +286,10 @@
     font-weight: bold;
     text-align: center;
     margin-top: 1.6rem;
+
+    @include sp {
+      font-size: 1.4rem;
+    }
   }
 }
 
@@ -332,9 +336,19 @@
     text-align: left;
   }
 
+  .messageLineLink {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.8rem;
+
+    @include sp {
+      margin-top: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
+  }
+
   .link {
     text-align: center;
-    display: inline-flex;
     align-items: center;
     color: $c-link;
     line-height: 1.25;
