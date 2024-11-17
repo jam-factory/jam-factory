@@ -7,6 +7,8 @@ import Image from "next/image";
 import Btn from "@/app/_components/common/btn/btn";
 import { outputMetadata } from "@/app/_utils/outputMetadata";
 import { CAMPAIGN_METADATA } from "@/app/_data/metadata";
+import ContactForm from "@/app/_components/common/contact-form/contact-form";
+import { LuExternalLink } from "react-icons/lu";
 
 export const metadata = outputMetadata(CAMPAIGN_METADATA.title, CAMPAIGN_METADATA.description, CAMPAIGN_METADATA.slug);
 
@@ -47,25 +49,31 @@ export default function MonitorCampaignPage() {
                   <p className={styles.planPriceText}>
                     ■Minimalプラン: 1ページだけ、名刺代わりのシンプルなホームページを持ちたい
                     <br />
-                    <del>¥65,780/年(税込)</del> →{" "}
-                    <span>
-                      ¥<span>32,890</span>/年(税込)
+                    <span className={styles.planPriceNum}>
+                      <del>¥65,780/年(税込)</del> →{" "}
+                      <span>
+                        ¥<span>32,890</span>/年(税込)
+                      </span>
                     </span>
                   </p>
                   <p className={styles.planPriceText}>
                     ■Basicプラン: 複数ページある、充実したホームページを持ちたい
                     <br />
-                    <del>¥98,780/年(税込)</del> →{" "}
-                    <span>
-                      ¥<span>49,390</span>/年(税込)
+                    <span className={styles.planPriceNum}>
+                      <del>¥98,780/年(税込)</del> →{" "}
+                      <span>
+                        ¥<span>49,390</span>/年(税込)
+                      </span>
                     </span>
                   </p>
                   <p className={styles.planPriceText}>
                     ■CMSプラン: 更新機能付きの本格的なサイトを持ちたい
                     <br />
-                    <del>¥142,780/年(税込)</del> →{" "}
-                    <span>
-                      ¥<span>71,390</span>/年(税込)
+                    <span className={styles.planPriceNum}>
+                      <del>¥142,780/年(税込)</del> →{" "}
+                      <span>
+                        ¥<span>71,390</span>/年(税込)
+                      </span>
                     </span>
                   </p>
                 </div>
@@ -150,37 +158,31 @@ export default function MonitorCampaignPage() {
                 </div>
               </dl>
             </div>
+          </section>
 
+          <section className={styles.message}>
+            <h2 className={styles.secTitle} data-en="CONTACT US">
+              <span>
+                まずは<span className={styles.spNone}>お気軽に</span>ご相談ください！
+              </span>
+            </h2>
             <div className={styles.messageBox}>
-              <div className={styles.message}>
-                <p className={styles.messageText}>
-                  <span>
-                    まずはお気軽に
-                    <br />
-                    ご相談ください！
-                  </span>
-                </p>
+              <div>
                 <p className={styles.messagePara}>
                   ホームページについて何も知らない、まずは話を聞いてみたいという場合でも
                   <br />
                   相談を受け付けておりますので、お気軽にご連絡ください。
+                  <br />
+                  <a href={LINE_URL} target="_blank" className={styles.link}>
+                    <span>LINEでのご相談はこちら</span>
+                    <LuExternalLink />
+                  </a>
                 </p>
               </div>
 
               <p className={styles.count}>残り定員数：5名</p>
 
-              <div className={styles.btns}>
-                <div className={styles.btn}>
-                  <Btn href="/contact" icon="arrow">
-                    フォームで相談する
-                  </Btn>
-                </div>
-                <div className={styles.btn}>
-                  <Btn href={LINE_URL} theme="secondary" icon="line" isExternal>
-                    LINEで相談する
-                  </Btn>
-                </div>
-              </div>
+              <ContactForm />
             </div>
           </section>
         </Container>

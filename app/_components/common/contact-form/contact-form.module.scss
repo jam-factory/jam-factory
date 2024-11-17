@@ -133,7 +133,10 @@
 
   @include sp {
     width: 100%;
-    max-width: 40rem;
+    height: 5.6rem;
+    max-width: 24rem;
+    margin: 0 auto;
+    font-size: 1.5rem;
   }
 
   @include hover {
